@@ -26,4 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: build
-   
+        run: npx projen build
+      - name: Find mutations
+        id: self_mutation
+        run: |-
+  
