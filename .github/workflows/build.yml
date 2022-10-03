@@ -30,4 +30,5 @@ jobs:
       - name: Find mutations
         id: self_mutation
         run: |-
-  
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUT
