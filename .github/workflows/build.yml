@@ -31,4 +31,7 @@ jobs:
         id: self_mutation
         run: |-
           git add .
-          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUT
+          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUTPUT
+      - name: Upload patch
+        if: steps.self_mutation.outputs.self_mutation_happened
+        uses: actions/u
