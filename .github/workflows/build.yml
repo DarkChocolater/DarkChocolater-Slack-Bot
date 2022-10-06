@@ -61,4 +61,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .repo.patch
-          
+          path: ${{ runner.temp }}
+      - name: Apply patch
+        run: '[ -s ${{ runner.temp }}/.repo.patch ] && 
