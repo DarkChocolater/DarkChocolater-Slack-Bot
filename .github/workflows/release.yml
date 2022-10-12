@@ -29,4 +29,9 @@ jobs:
         with:
           node-version: 18.12.1
       - name: Install dependencies
-        run: np
+        run: npm ci
+      - name: release
+        run: npx projen release
+      - name: Check for new commits
+        id: git_remote
+        run: 
