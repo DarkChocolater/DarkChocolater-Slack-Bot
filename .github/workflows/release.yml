@@ -34,4 +34,5 @@ jobs:
         run: npx projen release
       - name: Check for new commits
         id: git_remote
-        run: 
+        run: echo "latest_commit=$(git ls-remote origin -h ${{ github.ref }} | cut -f1)" >> $GITHUB_OUTPUT
+      - name: Backup artifact perm
