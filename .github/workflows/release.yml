@@ -44,4 +44,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          
+          path: dist
+  release_github:
+    name: Publish to GitHub Releases
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
