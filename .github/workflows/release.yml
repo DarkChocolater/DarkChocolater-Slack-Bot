@@ -53,4 +53,8 @@ jobs:
       contents: write
     if: needs.release.outputs.latest_commit == github.sha
     steps:
-      - uses: actions
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.1
+      - name: Download build artifacts
+        uses: actions/downloa
