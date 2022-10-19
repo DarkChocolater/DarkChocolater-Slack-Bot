@@ -10,4 +10,9 @@
     },
     {
       "name": "@types/node",
-      "ve
+      "version": "^18",
+      "type": "build"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      
