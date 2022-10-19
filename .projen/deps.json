@@ -2,4 +2,12 @@
   "dependencies": [
     {
       "name": "@types/aws-lambda",
-      "type": "b
+      "type": "build"
+    },
+    {
+      "name": "@types/jest",
+      "type": "build"
+    },
+    {
+      "name": "@types/node",
+      "ve
