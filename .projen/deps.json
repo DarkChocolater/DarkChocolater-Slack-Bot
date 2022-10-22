@@ -21,4 +21,11 @@
     {
       "name": "@typescript-eslint/parser",
       "version": "^5",
-      "ty
+      "type": "build"
+    },
+    {
+      "name": "aws-cdk",
+      "version": "^2.69.0",
+      "type": "build"
+    },
+  
