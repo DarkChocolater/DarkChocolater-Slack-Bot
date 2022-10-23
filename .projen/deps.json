@@ -42,4 +42,11 @@
     },
     {
       "name": "eslint-import-resolver-typescript",
-      "t
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-
