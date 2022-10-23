@@ -37,4 +37,9 @@
       "type": "build"
     },
     {
-    
+      "name": "eslint-import-resolver-node",
+      "type": "build"
+    },
+    {
+      "name": "eslint-import-resolver-typescript",
+      "t
