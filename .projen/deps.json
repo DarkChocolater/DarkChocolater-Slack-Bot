@@ -49,4 +49,12 @@
       "type": "build"
     },
     {
-      "name": "eslint-plugin-
+      "name": "eslint-plugin-prettier",
+      "type": "build"
+    },
+    {
+      "name": "eslint",
+      "version": "^8",
+      "type": "build"
+    },
+    {
