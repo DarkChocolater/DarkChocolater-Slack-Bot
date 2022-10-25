@@ -64,4 +64,12 @@
     {
       "name": "jest-junit",
       "version": "^13",
-      
+      "type": "build"
+    },
+    {
+      "name": "npm-check-updates",
+      "version": "^16",
+      "type": "build"
+    },
+    {
+      "n
