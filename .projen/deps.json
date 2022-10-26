@@ -72,4 +72,12 @@
       "type": "build"
     },
     {
-      "n
+      "name": "prettier",
+      "type": "build"
+    },
+    {
+      "name": "projen",
+      "type": "build"
+    },
+    {
+      "name"
