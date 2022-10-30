@@ -131,4 +131,11 @@
       "type": "runtime"
     },
     {
-      "name": "
+      "name": "@slack/web-api",
+      "type": "runtime"
+    },
+    {
+      "name": "@wisegpt/awscdk-slack-event-bus",
+      "type": "runtime"
+    },
+    {
