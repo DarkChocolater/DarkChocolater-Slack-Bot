@@ -124,4 +124,11 @@
     },
     {
       "name": "@aws-sdk/client-sqs",
-     
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/lib-dynamodb",
+      "type": "runtime"
+    },
+    {
+      "name": "
