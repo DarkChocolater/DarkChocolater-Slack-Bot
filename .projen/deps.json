@@ -119,4 +119,9 @@
       "type": "runtime"
     },
     {
-  
+      "name": "@aws-sdk/client-secrets-manager",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-sqs",
+     
