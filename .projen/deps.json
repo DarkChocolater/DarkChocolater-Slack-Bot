@@ -139,3 +139,9 @@
       "type": "runtime"
     },
     {
+      "name": "@wisegpt/gpt-conversation-prompt",
+      "type": "runtime"
+    },
+    {
+      "name": "aws-cdk-lib",
+      "version": "^
