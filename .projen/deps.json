@@ -150,3 +150,12 @@
     {
       "name": "constructs",
       "version": "^10.0.5",
+      "type": "runtime"
+    },
+    {
+      "name": "gpt3-tokenizer",
+      "type": "runtime"
+    },
+    {
+      "name": "openai",
+      "type": "runt
