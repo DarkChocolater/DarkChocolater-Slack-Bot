@@ -5,4 +5,7 @@
 import { CommandBus, globalCommandBus } from "../../domain/bus/command-bus";
 import {
   ConversationAICommand,
-  TriggerComplet
+  TriggerCompletionCommand,
+  TriggerSummaryCommand,
+} from "../../domain/conversation/ai/conversation-ai.commands";
+import { C
