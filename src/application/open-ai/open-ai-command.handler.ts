@@ -15,4 +15,9 @@ export class OpenAICommandHandler {
   constructor(
     private readonly conversationCommandBus: CommandBus<ConversationCommand> = globalCommandBus,
     private readonly openAIService: OpenAIService = new OpenAIService()
-  ) 
+  ) {}
+
+  async handle(cmd: ConversationAICommand): Promise<void> {
+    switch (cmd.type) {
+      case "TRIGGER_COMPLETION_COMMAND": {
+        
