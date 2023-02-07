@@ -9,4 +9,8 @@ import {
   TriggerSummaryCommand,
 } from "../../domain/conversation/ai/conversation-ai.commands";
 import { ConversationCommand } from "../../domain/conversation/conversation.commands";
-import { OpenAIService } from "../../infrastructure/ope
+import { OpenAIService } from "../../infrastructure/openai/openai.service";
+
+export class OpenAICommandHandler {
+  constructor(
+    private readonly conversationCommandBus: Command
