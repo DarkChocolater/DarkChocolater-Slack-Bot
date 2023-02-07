@@ -13,4 +13,6 @@ import { OpenAIService } from "../../infrastructure/openai/openai.service";
 
 export class OpenAICommandHandler {
   constructor(
-    private readonly conversationCommandBus: Command
+    private readonly conversationCommandBus: CommandBus<ConversationCommand> = globalCommandBus,
+    private readonly openAIService: OpenAIService = new OpenAIService()
+  ) 
