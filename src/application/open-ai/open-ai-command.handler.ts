@@ -8,4 +8,5 @@ import {
   TriggerCompletionCommand,
   TriggerSummaryCommand,
 } from "../../domain/conversation/ai/conversation-ai.commands";
-import { C
+import { ConversationCommand } from "../../domain/conversation/conversation.commands";
+import { OpenAIService } from "../../infrastructure/ope
