@@ -20,4 +20,7 @@ export class OpenAICommandHandler {
   async handle(cmd: ConversationAICommand): Promise<void> {
     switch (cmd.type) {
       case "TRIGGER_COMPLETION_COMMAND": {
-        
+        return this.executeTriggerCompletion(cmd);
+      }
+      case "TRIGGER_SUMMARY_COMMAND": {
+        return this.executeTrigg
