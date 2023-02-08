@@ -27,4 +27,11 @@ export class OpenAICommandHandler {
       }
       default:
         throw new Error(`unknown type of command: ${JSON.stringify(cmd)}`);
-   
+    }
+  }
+
+  private async executeTriggerCompletion(
+    cmd: TriggerCompletionCommand
+  ): Promise<void> {
+    try {
+     
