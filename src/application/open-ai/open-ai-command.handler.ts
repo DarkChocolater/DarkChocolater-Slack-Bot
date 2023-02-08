@@ -23,4 +23,8 @@ export class OpenAICommandHandler {
         return this.executeTriggerCompletion(cmd);
       }
       case "TRIGGER_SUMMARY_COMMAND": {
-        return this.executeTrigg
+        return this.executeTriggerSummary(cmd);
+      }
+      default:
+        throw new Error(`unknown type of command: ${JSON.stringify(cmd)}`);
+   
