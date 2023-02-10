@@ -38,4 +38,6 @@ export class OpenAICommandHandler {
         cmd.conversation
       );
 
-      await
+      await this.conversationCommandBus.send({
+        type: "PROCESS_COMPLETION_RESPONSE_COMMAND",
+        responseType: "B
