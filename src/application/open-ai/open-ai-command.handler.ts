@@ -40,4 +40,6 @@ export class OpenAICommandHandler {
 
       await this.conversationCommandBus.send({
         type: "PROCESS_COMPLETION_RESPONSE_COMMAND",
-        responseType: "B
+        responseType: "BOT_COMPLETION_SUCCESS",
+        conversationId: cmd.conversationId,
+        correlationId: cmd.correla
