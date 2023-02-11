@@ -42,4 +42,7 @@ export class OpenAICommandHandler {
         type: "PROCESS_COMPLETION_RESPONSE_COMMAND",
         responseType: "BOT_COMPLETION_SUCCESS",
         conversationId: cmd.conversationId,
-        correlationId: cmd.correla
+        correlationId: cmd.correlationId,
+        message: text,
+        // We rely on the fact that only 1 completion is done, this number could be wrong
+      
