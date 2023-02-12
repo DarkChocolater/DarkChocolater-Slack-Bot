@@ -68,4 +68,8 @@ export class OpenAICommandHandler {
     cmd: TriggerSummaryCommand
   ): Promise<void> {
     try {
-      cons
+      const { summary, usage } = await this.openAIService.summary(
+        cmd.conversation
+      );
+
+      await this.c
