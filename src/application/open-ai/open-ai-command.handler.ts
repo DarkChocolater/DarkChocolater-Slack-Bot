@@ -60,4 +60,12 @@ export class OpenAICommandHandler {
         },
       });
 
-    
+      throw err;
+    }
+  }
+
+  private async executeTriggerSummary(
+    cmd: TriggerSummaryCommand
+  ): Promise<void> {
+    try {
+      cons
