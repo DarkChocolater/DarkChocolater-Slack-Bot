@@ -53,4 +53,11 @@ export class OpenAICommandHandler {
       await this.conversationCommandBus.send({
         type: "PROCESS_COMPLETION_RESPONSE_COMMAND",
         responseType: "BOT_COMPLETION_ERROR",
-        conversationId: cmd.conversati
+        conversationId: cmd.conversationId,
+        correlationId: cmd.correlationId,
+        error: {
+          message: err.message,
+        },
+      });
+
+    
