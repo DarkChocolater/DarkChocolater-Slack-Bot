@@ -51,4 +51,6 @@ export class OpenAICommandHandler {
       });
     } catch (err: any) {
       await this.conversationCommandBus.send({
-        type: "PR
+        type: "PROCESS_COMPLETION_RESPONSE_COMMAND",
+        responseType: "BOT_COMPLETION_ERROR",
+        conversationId: cmd.conversati
