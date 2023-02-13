@@ -75,4 +75,7 @@ export class OpenAICommandHandler {
       await this.conversationCommandBus.send({
         type: "PROCESS_SUMMARY_RESPONSE_COMMAND",
         responseType: "BOT_SUMMARY_SUCCESS",
-   
+        conversationId: cmd.conversationId,
+        correlationId: cmd.correlationId,
+        summary,
+  
