@@ -72,4 +72,7 @@ export class OpenAICommandHandler {
         cmd.conversation
       );
 
-      await this.c
+      await this.conversationCommandBus.send({
+        type: "PROCESS_SUMMARY_RESPONSE_COMMAND",
+        responseType: "BOT_SUMMARY_SUCCESS",
+   
