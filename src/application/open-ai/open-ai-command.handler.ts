@@ -79,4 +79,7 @@ export class OpenAICommandHandler {
         correlationId: cmd.correlationId,
         summary,
         // We rely on the fact that only 1 completion is done, this number could be wrong
-        // if we used `best_of
+        // if we used `best_of` and `n` parameters.
+        summaryTokens: usage.completionTokens,
+        totalTokensSpent: usage.totalTokens,
+    
