@@ -82,4 +82,7 @@ export class OpenAICommandHandler {
         // if we used `best_of` and `n` parameters.
         summaryTokens: usage.completionTokens,
         totalTokensSpent: usage.totalTokens,
-    
+      });
+    } catch (err: any) {
+      await this.conversationCommandBus.send({
+        type: "PROCESS_SUMMARY_RESPONSE_COMMA
