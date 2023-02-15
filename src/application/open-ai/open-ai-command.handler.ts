@@ -78,4 +78,5 @@ export class OpenAICommandHandler {
         conversationId: cmd.conversationId,
         correlationId: cmd.correlationId,
         summary,
-  
+        // We rely on the fact that only 1 completion is done, this number could be wrong
+        // if we used `best_of
