@@ -4,4 +4,6 @@ import {
   BotCompletionRequested,
   ConversationEnded,
   ConversationEvent,
- 
+  ConversationStarted,
+} from "../../domain/conversation/conversation.events";
+import { SlackConversationView } from "
