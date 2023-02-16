@@ -88,4 +88,13 @@ export class OpenAICommandHandler {
         type: "PROCESS_SUMMARY_RESPONSE_COMMAND",
         responseType: "BOT_SUMMARY_ERROR",
         conversationId: cmd.conversationId,
-        correlationId: c
+        correlationId: cmd.correlationId,
+        error: {
+          message: err.message,
+        },
+      });
+
+      throw err;
+    }
+  }
+}
