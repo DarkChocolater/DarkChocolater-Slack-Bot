@@ -11,4 +11,8 @@ import { SlackConversationDynamodbRepository } from "../../infrastructure/dynamo
 import { SlackMessageHelpers } from "../../infrastructure/slack/slack-message-helpers";
 import defaultSlackWebClientFactory, {
   SlackWebClientFactory,
-} from "../../infrastruc
+} from "../../infrastructure/slack/slack-web-client-factory";
+
+export class ConversationEventHandler {
+  constructor(
+    private readonly repository: SlackCo
