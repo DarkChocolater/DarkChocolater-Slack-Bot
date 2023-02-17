@@ -6,4 +6,5 @@ import {
   ConversationEvent,
   ConversationStarted,
 } from "../../domain/conversation/conversation.events";
-import { SlackConversationView } from "
+import { SlackConversationView } from "../../domain/slack-adapter/slack-adapter.dto";
+import { SlackConversationDynamodbRepository } from "../../infrastructure
