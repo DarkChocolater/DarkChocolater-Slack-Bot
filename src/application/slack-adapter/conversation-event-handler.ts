@@ -19,4 +19,7 @@ export class ConversationEventHandler {
     private readonly slackWebClientFactory: SlackWebClientFactory = defaultSlackWebClientFactory
   ) {}
 
-  async handle(event: ConversationEvent): Pro
+  async handle(event: ConversationEvent): Promise<void> {
+    switch (event.type) {
+      case "CONVERSATION_STARTED":
+        return this.handleConversationStarted(ev
