@@ -16,4 +16,7 @@ import defaultSlackWebClientFactory, {
 export class ConversationEventHandler {
   constructor(
     private readonly repository: SlackConversationDynamodbRepository = new SlackConversationDynamodbRepository(),
-    private readonly slackWebClie
+    private readonly slackWebClientFactory: SlackWebClientFactory = defaultSlackWebClientFactory
+  ) {}
+
+  async handle(event: ConversationEvent): Pro
