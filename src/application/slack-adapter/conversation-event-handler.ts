@@ -15,4 +15,5 @@ import defaultSlackWebClientFactory, {
 
 export class ConversationEventHandler {
   constructor(
-    private readonly repository: SlackCo
+    private readonly repository: SlackConversationDynamodbRepository = new SlackConversationDynamodbRepository(),
+    private readonly slackWebClie
