@@ -22,4 +22,7 @@ export class ConversationEventHandler {
   async handle(event: ConversationEvent): Promise<void> {
     switch (event.type) {
       case "CONVERSATION_STARTED":
-        return this.handleConversationStarted(ev
+        return this.handleConversationStarted(event);
+      case "BOT_COMPLETION_REQUESTED":
+        return this.handleBotCompletionRequested(event);
+      case "BOT_RESPONSE_
