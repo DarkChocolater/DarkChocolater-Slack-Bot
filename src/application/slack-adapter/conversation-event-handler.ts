@@ -34,4 +34,7 @@ export class ConversationEventHandler {
 
   private async handleConversationStarted(
     event: ConversationStarted
-  ): Promise<voi
+  ): Promise<void> {
+    await this.repository.create({
+      conversationId: event.conversationId,
+      teamId: event.metadata.t
