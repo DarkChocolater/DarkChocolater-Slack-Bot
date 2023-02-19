@@ -25,4 +25,7 @@ export class ConversationEventHandler {
         return this.handleConversationStarted(event);
       case "BOT_COMPLETION_REQUESTED":
         return this.handleBotCompletionRequested(event);
-      case "BOT_RESPONSE_
+      case "BOT_RESPONSE_ADDED":
+        return this.handleBotResponseAdded(event);
+      case "CONVERSATION_ENDED":
+        return this.ha
