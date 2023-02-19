@@ -28,4 +28,10 @@ export class ConversationEventHandler {
       case "BOT_RESPONSE_ADDED":
         return this.handleBotResponseAdded(event);
       case "CONVERSATION_ENDED":
-        return this.ha
+        return this.handleConversationEnded(event);
+    }
+  }
+
+  private async handleConversationStarted(
+    event: ConversationStarted
+  ): Promise<voi
