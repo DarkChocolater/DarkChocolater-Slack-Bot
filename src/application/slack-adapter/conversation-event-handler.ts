@@ -37,4 +37,8 @@ export class ConversationEventHandler {
   ): Promise<void> {
     await this.repository.create({
       conversationId: event.conversationId,
-      teamId: event.metadata.t
+      teamId: event.metadata.teamId,
+      threadId: event.metadata.threadId,
+      channel: event.metadata.channel,
+      botUserId: event.metadata.botUserId,
+      s
