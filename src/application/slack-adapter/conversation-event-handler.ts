@@ -50,4 +50,6 @@ export class ConversationEventHandler {
   private async handleBotCompletionRequested(
     event: BotCompletionRequested
   ): Promise<void> {
-    const view = await this.getOrFailByConvers
+    const view = await this.getOrFailByConversationId(event.conversationId);
+    const slackService = await this.slackWebClientFactory.create({
+      teamId: view.teamId,
