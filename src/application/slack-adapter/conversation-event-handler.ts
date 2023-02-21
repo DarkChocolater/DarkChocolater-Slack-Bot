@@ -53,3 +53,8 @@ export class ConversationEventHandler {
     const view = await this.getOrFailByConversationId(event.conversationId);
     const slackService = await this.slackWebClientFactory.create({
       teamId: view.teamId,
+    });
+
+    const response = await slackService.chat.postMessage({
+      thread_ts: view.threadId,
+      channel: view.channe
