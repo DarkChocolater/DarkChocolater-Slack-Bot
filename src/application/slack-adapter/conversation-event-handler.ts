@@ -47,4 +47,7 @@ export class ConversationEventHandler {
     });
   }
 
-  private async handleBotCompletionReque
+  private async handleBotCompletionRequested(
+    event: BotCompletionRequested
+  ): Promise<void> {
+    const view = await this.getOrFailByConvers
