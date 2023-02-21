@@ -41,4 +41,10 @@ export class ConversationEventHandler {
       threadId: event.metadata.threadId,
       channel: event.metadata.channel,
       botUserId: event.metadata.botUserId,
-      s
+      status: "CREATED",
+      createdAt: new Date(),
+      botMessages: {},
+    });
+  }
+
+  private async handleBotCompletionReque
