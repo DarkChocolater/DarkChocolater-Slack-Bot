@@ -57,4 +57,10 @@ export class ConversationEventHandler {
 
     const response = await slackService.chat.postMessage({
       thread_ts: view.threadId,
-      channel: view.channe
+      channel: view.channel,
+      ...SlackMessageHelpers.createInitialMessage(),
+    });
+
+    await this.repository.update({
+      ...view,
+   
