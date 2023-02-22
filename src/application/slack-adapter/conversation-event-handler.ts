@@ -67,4 +67,11 @@ export class ConversationEventHandler {
         ...view.botMessages,
         [event.correlationId]: {
           ts: response.ts!,
-          createdAt: new Dat
+          createdAt: new Date(),
+          status: "REQUESTED",
+        },
+      },
+    });
+  }
+
+  private async handleBotResponseAdded(event: BotRespon
