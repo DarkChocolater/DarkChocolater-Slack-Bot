@@ -63,4 +63,8 @@ export class ConversationEventHandler {
 
     await this.repository.update({
       ...view,
-   
+      botMessages: {
+        ...view.botMessages,
+        [event.correlationId]: {
+          ts: response.ts!,
+          createdAt: new Dat
