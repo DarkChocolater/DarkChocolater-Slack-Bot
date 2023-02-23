@@ -74,4 +74,6 @@ export class ConversationEventHandler {
     });
   }
 
-  private async handleBotResponseAdded(event: BotRespon
+  private async handleBotResponseAdded(event: BotResponseAdded): Promise<void> {
+    const view = await this.getOrFailByConversationId(event.conversationId);
+    const slackService = a
