@@ -81,3 +81,8 @@ export class ConversationEventHandler {
     });
 
     await this.completeBotMessage({
+      view,
+      slackService,
+      botResponse: {
+        correlationId: event.correlationId,
+        message: event.mess
