@@ -76,4 +76,8 @@ export class ConversationEventHandler {
 
   private async handleBotResponseAdded(event: BotResponseAdded): Promise<void> {
     const view = await this.getOrFailByConversationId(event.conversationId);
-    const slackService = a
+    const slackService = await this.slackWebClientFactory.create({
+      teamId: view.teamId,
+    });
+
+    await this.completeBotMessage({
