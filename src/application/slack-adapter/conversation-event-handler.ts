@@ -85,4 +85,12 @@ export class ConversationEventHandler {
       slackService,
       botResponse: {
         correlationId: event.correlationId,
-        message: event.mess
+        message: event.message.text,
+      },
+    });
+  }
+
+  private async handleConversationEnded(
+    event: ConversationEnded
+  ): Promise<void> {
+   
