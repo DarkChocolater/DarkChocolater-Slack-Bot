@@ -93,4 +93,5 @@ export class ConversationEventHandler {
   private async handleConversationEnded(
     event: ConversationEnded
   ): Promise<void> {
-   
+    const view = await this.getOrFailByConversationId(event.conversationId);
+    const slackService = await this.slackWebClient
