@@ -94,4 +94,8 @@ export class ConversationEventHandler {
     event: ConversationEnded
   ): Promise<void> {
     const view = await this.getOrFailByConversationId(event.conversationId);
-    const slackService = await this.slackWebClient
+    const slackService = await this.slackWebClientFactory.create({
+      teamId: view.teamId,
+    });
+
+    const updatedView: SlackConversationView = { ...view, status:
