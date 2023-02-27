@@ -98,4 +98,8 @@ export class ConversationEventHandler {
       teamId: view.teamId,
     });
 
-    const updatedView: SlackConversationView = { ...view, status:
+    const updatedView: SlackConversationView = { ...view, status: "COMPLETED" };
+
+    await this.repository.update(updatedView);
+
+    if (event.reason.type === "BOT_COMPLETION_ERROR")
