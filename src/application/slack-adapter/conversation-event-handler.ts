@@ -102,4 +102,9 @@ export class ConversationEventHandler {
 
     await this.repository.update(updatedView);
 
-    if (event.reason.type === "BOT_COMPLETION_ERROR")
+    if (event.reason.type === "BOT_COMPLETION_ERROR") {
+      await this.completeBotMessage({
+        view: updatedView,
+        slackService,
+        botResponse: {
+          
