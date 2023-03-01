@@ -107,4 +107,10 @@ export class ConversationEventHandler {
         view: updatedView,
         slackService,
         botResponse: {
-          
+          correlationId: event.reason.correlationId,
+          message: event.reason.error.message,
+        },
+      });
+    }
+
+ 
