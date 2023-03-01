@@ -113,4 +113,7 @@ export class ConversationEventHandler {
       });
     }
 
- 
+    await slackService.chat.postMessage({
+      thread_ts: view.threadId,
+      channel: view.channel,
+     
