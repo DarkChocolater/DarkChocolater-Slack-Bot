@@ -127,4 +127,9 @@ export class ConversationEventHandler {
   }: {
     view: SlackConversationView;
     slackService: WebClient;
-    botRespo
+    botResponse: {
+      correlationId: string;
+      message: string;
+    };
+  }): Promise<void> {
+    const botMessage = view.botMessages[b
