@@ -122,4 +122,9 @@ export class ConversationEventHandler {
 
   private async completeBotMessage({
     view,
-    
+    slackService,
+    botResponse,
+  }: {
+    view: SlackConversationView;
+    slackService: WebClient;
+    botRespo
