@@ -116,4 +116,10 @@ export class ConversationEventHandler {
     await slackService.chat.postMessage({
       thread_ts: view.threadId,
       channel: view.channel,
-     
+      ...SlackMessageHelpers.createConversationEndedMessage(event),
+    });
+  }
+
+  private async completeBotMessage({
+    view,
+    
