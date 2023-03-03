@@ -132,4 +132,7 @@ export class ConversationEventHandler {
       message: string;
     };
   }): Promise<void> {
-    const botMessage = view.botMessages[b
+    const botMessage = view.botMessages[botResponse.correlationId];
+    // const messagesToPrecede = Object.entries(view.botMessages).filter(
+    //   ([key, message]) =>
+ 
