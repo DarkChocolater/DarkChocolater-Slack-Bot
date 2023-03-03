@@ -135,4 +135,8 @@ export class ConversationEventHandler {
     const botMessage = view.botMessages[botResponse.correlationId];
     // const messagesToPrecede = Object.entries(view.botMessages).filter(
     //   ([key, message]) =>
- 
+    //     message.status === "RESPONDED" && key !== event.correlationId
+    // );
+
+    await Promise.all([
+      // ...messagesToPrec
