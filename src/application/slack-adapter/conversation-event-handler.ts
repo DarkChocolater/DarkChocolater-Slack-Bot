@@ -139,4 +139,8 @@ export class ConversationEventHandler {
     // );
 
     await Promise.all([
-      // ...messagesToPrec
+      // ...messagesToPrecede.map(([, message]) =>
+      //   this.precedeMessage(
+      //     slackService,
+      //     view.channel,
+      //   
