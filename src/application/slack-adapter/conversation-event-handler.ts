@@ -148,4 +148,8 @@ export class ConversationEventHandler {
       //   )
       // ),
       slackService.chat.update({
-        ts: botMessa
+        ts: botMessage.ts,
+        channel: view.channel,
+        ...SlackMessageHelpers.updateWithResponse({
+          markdownBody: botResponse.message,
+         
