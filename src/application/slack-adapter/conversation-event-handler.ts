@@ -143,4 +143,9 @@ export class ConversationEventHandler {
       //   this.precedeMessage(
       //     slackService,
       //     view.channel,
-      //   
+      //     view.threadId,
+      //     message.ts
+      //   )
+      // ),
+      slackService.chat.update({
+        ts: botMessa
