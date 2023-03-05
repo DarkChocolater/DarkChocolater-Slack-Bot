@@ -152,4 +152,11 @@ export class ConversationEventHandler {
         channel: view.channel,
         ...SlackMessageHelpers.updateWithResponse({
           markdownBody: botResponse.message,
-         
+          botUserId: view.botUserId,
+        }),
+      }),
+    ]);
+
+    await this.repository.update({
+      ...view,
+      bot
