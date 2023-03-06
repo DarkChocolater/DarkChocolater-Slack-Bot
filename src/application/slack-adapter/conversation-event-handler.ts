@@ -167,4 +167,9 @@ export class ConversationEventHandler {
         //     { ...message, status: "PRECEDED" },
         //   ])
         // ),
-      
+        [botResponse.correlationId]: {
+          ...botMessage,
+          status: "RESPONDED",
+        },
+      },
+    });
