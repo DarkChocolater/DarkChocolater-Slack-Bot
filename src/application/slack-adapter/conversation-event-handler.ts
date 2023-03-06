@@ -162,4 +162,9 @@ export class ConversationEventHandler {
       botMessages: {
         ...view.botMessages,
         // ...Object.fromEntries(
-        //   messagesToPrecede.map(([key, mes
+        //   messagesToPrecede.map(([key, message]) => [
+        //     key,
+        //     { ...message, status: "PRECEDED" },
+        //   ])
+        // ),
+      
