@@ -173,3 +173,10 @@ export class ConversationEventHandler {
         },
       },
     });
+  }
+
+  // private async precedeMessage(
+  //   slackService: WebClient,
+  //   channel: string,
+  //   thread_ts: string,
+  //   t
