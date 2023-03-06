@@ -159,4 +159,7 @@ export class ConversationEventHandler {
 
     await this.repository.update({
       ...view,
-      bot
+      botMessages: {
+        ...view.botMessages,
+        // ...Object.fromEntries(
+        //   messagesToPrecede.map(([key, mes
