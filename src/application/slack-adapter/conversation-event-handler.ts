@@ -179,4 +179,7 @@ export class ConversationEventHandler {
   //   slackService: WebClient,
   //   channel: string,
   //   thread_ts: string,
-  //   t
+  //   ts: string
+  // ): Promise<void> {
+  //   // TODO: figure out a way to update without querying history?
+  //   const result = await slackS
