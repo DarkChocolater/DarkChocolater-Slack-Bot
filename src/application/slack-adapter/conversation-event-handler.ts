@@ -188,4 +188,8 @@ export class ConversationEventHandler {
   //     latest: ts,
   //     limit: 1,
   //     inclusive: true,
- 
+  //   });
+  //
+  //   const { text, blocks }: any = result.messages?.[1]!;
+  //   const previousMessage = { text, blocks };
+  //
