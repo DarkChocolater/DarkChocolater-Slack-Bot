@@ -193,3 +193,11 @@ export class ConversationEventHandler {
   //   const { text, blocks }: any = result.messages?.[1]!;
   //   const previousMessage = { text, blocks };
   //
+  //   await slackService.chat.update({
+  //     ts,
+  //     channel,
+  //     ...SlackMessageHelpers.precedeMessage(previousMessage),
+  //   });
+  // }
+
+  privat
