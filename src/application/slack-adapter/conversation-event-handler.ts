@@ -182,4 +182,10 @@ export class ConversationEventHandler {
   //   ts: string
   // ): Promise<void> {
   //   // TODO: figure out a way to update without querying history?
-  //   const result = await slackS
+  //   const result = await slackService.conversations.replies({
+  //     channel,
+  //     ts: thread_ts,
+  //     latest: ts,
+  //     limit: 1,
+  //     inclusive: true,
+ 
