@@ -200,4 +200,7 @@ export class ConversationEventHandler {
   //   });
   // }
 
-  privat
+  private async getOrFailByConversationId(
+    conversationId: string
+  ): Promise<SlackConversationView> {
+    const view = await thi
