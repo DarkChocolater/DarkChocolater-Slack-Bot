@@ -93,3 +93,37 @@ export class SlackEventHandler {
         conversationId: slackConversationView.conversationId,
         message: {
           id: event.ts,
+          author: { id: event.user },
+          text: prepareForConversationDomain({
+            text: event.text,
+            botUserId: slackConversationView.botUserId,
+          }),
+        },
+      });
+    }
+  }
+
+  private async createNewConversation(
+    envelope: SlackMessageEventWithEnvelope,
+    ts: string
+  ) {
+    const { event } = envelope;
+    const botUserId = SlackEventHandler.getAuthUserId(envelope)!;
+
+    await this.commandBus.send({
+      type: "CREATE_CONVERSATION_COMMAND",
+      conversationId: crypto.randomUUID(),
+      initialMessage: {
+        id: event.ts,
+        author: { id: event.user },
+        text: prepareForConversationDomain({ text: event.text, botUserId }),
+      },
+      metadata: {
+        botUserId,
+        teamId: event.team,
+        threadId: ts,
+        channel: event.channel,
+      },
+    });
+  }
+}
