@@ -203,4 +203,6 @@ export class ConversationEventHandler {
   private async getOrFailByConversationId(
     conversationId: string
   ): Promise<SlackConversationView> {
-    const view = await thi
+    const view = await this.repository.getByConversationId(conversationId);
+    if (!view) {
+      throw new Error("expected view to be created al
