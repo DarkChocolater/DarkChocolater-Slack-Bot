@@ -205,4 +205,9 @@ export class ConversationEventHandler {
   ): Promise<SlackConversationView> {
     const view = await this.repository.getByConversationId(conversationId);
     if (!view) {
-      throw new Error("expected view to be created al
+      throw new Error("expected view to be created already");
+    }
+
+    return view;
+  }
+}
