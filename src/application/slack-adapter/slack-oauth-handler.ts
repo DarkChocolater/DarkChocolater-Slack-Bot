@@ -6,4 +6,8 @@ import {
   OAuthV2AccessOutput,
   TeamAccess,
   UserAccess,
-} from "../../infrastructure/slack/oauth/oauth.dto"
+} from "../../infrastructure/slack/oauth/oauth.dto";
+import { SlackOAuthService } from "../../infrastructure/slack/oauth/slack-oauth-service";
+
+export class SlackOAuthHandler {
+  priv
