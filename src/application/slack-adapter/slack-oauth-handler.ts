@@ -10,4 +10,7 @@ import {
 import { SlackOAuthService } from "../../infrastructure/slack/oauth/slack-oauth-service";
 
 export class SlackOAuthHandler {
-  priv
+  private static readonly APP_ID = config.slack.appId;
+
+  private static mergeTeamAccess(
+    { accessToken, authedUser: { id: us
