@@ -13,4 +13,9 @@ export class SlackOAuthHandler {
   private static readonly APP_ID = config.slack.appId;
 
   private static mergeTeamAccess(
-    { accessToken, authedUser: { id: us
+    { accessToken, authedUser: { id: userId }, scopes }: OAuthV2AccessOutput,
+    teamAccess: TeamAccess
+  ): TeamAccess {
+    return {
+      ...teamAccess,
+      accessTo
