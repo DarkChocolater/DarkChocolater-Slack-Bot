@@ -18,4 +18,6 @@ export class SlackOAuthHandler {
   ): TeamAccess {
     return {
       ...teamAccess,
-      accessTo
+      accessToken: accessToken ?? null,
+      authedUsers: teamAccess.authedUsers.add(userId),
+      scopes: new Set(
