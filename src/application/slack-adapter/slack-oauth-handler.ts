@@ -20,4 +20,9 @@ export class SlackOAuthHandler {
       ...teamAccess,
       accessToken: accessToken ?? null,
       authedUsers: teamAccess.authedUsers.add(userId),
-      scopes: new Set(
+      scopes: new Set(scopes),
+    };
+  }
+
+  private static mergeUserAccess(
+    { authedUser: { accessToken, scopes } }: OAuthV2AccessOutput
