@@ -25,4 +25,10 @@ export class SlackOAuthHandler {
   }
 
   private static mergeUserAccess(
-    { authedUser: { accessToken, scopes } }: OAuthV2AccessOutput
+    { authedUser: { accessToken, scopes } }: OAuthV2AccessOutput,
+    userAccess: UserAccess
+  ): UserAccess {
+    return {
+      ...userAccess,
+      accessToken: accessToken ?? null,
+      scopes:
