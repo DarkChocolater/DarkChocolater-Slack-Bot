@@ -47,4 +47,11 @@ export class SlackOAuthHandler {
       teamId,
       accessToken: accessToken ?? null,
       authedUsers: new Set([userId]),
-      scopes: new Set(scopes
+      scopes: new Set(scopes),
+    };
+  }
+
+  private static createInitialUserAccess({
+    appId,
+    team: { id: teamId },
+    authedUser: { id: u
