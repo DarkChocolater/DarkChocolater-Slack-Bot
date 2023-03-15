@@ -38,4 +38,9 @@ export class SlackOAuthHandler {
   private static createInitialTeamAccess({
     appId,
     team: { id: teamId },
-    acce
+    accessToken,
+    authedUser: { id: userId },
+    scopes,
+  }: OAuthV2AccessOutput): TeamAccess {
+    return {
+      appI
