@@ -31,4 +31,11 @@ export class SlackOAuthHandler {
     return {
       ...userAccess,
       accessToken: accessToken ?? null,
-      scopes:
+      scopes: new Set(scopes),
+    };
+  }
+
+  private static createInitialTeamAccess({
+    appId,
+    team: { id: teamId },
+    acce
