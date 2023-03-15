@@ -43,4 +43,8 @@ export class SlackOAuthHandler {
     scopes,
   }: OAuthV2AccessOutput): TeamAccess {
     return {
-      appI
+      appId,
+      teamId,
+      accessToken: accessToken ?? null,
+      authedUsers: new Set([userId]),
+      scopes: new Set(scopes
