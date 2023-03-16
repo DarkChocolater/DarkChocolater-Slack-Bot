@@ -59,4 +59,11 @@ export class SlackOAuthHandler {
     return {
       appId,
       teamId,
-      us
+      userId,
+      accessToken: accessToken ?? null,
+      scopes: new Set(scopes),
+    };
+  }
+
+  constructor(
+    private 
