@@ -66,4 +66,5 @@ export class SlackOAuthHandler {
   }
 
   constructor(
-    private 
+    private readonly slackOAuthService: SlackOAuthService = new SlackOAuthService(),
+    private readonly slackOAuthReaderRepository: Sla
