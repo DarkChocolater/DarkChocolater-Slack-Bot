@@ -54,4 +54,9 @@ export class SlackOAuthHandler {
   private static createInitialUserAccess({
     appId,
     team: { id: teamId },
-    authedUser: { id: u
+    authedUser: { id: userId, accessToken, scopes },
+  }: OAuthV2AccessOutput): UserAccess {
+    return {
+      appId,
+      teamId,
+      us
