@@ -76,4 +76,7 @@ export class SlackOAuthHandler {
   ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
     const code = event.queryStringParameters?.code;
     if (!code) {
- 
+      throw new Error("invalid redirect from slack. code was not set.");
+    }
+
+    const oAuthV2AccessOut
