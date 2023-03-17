@@ -72,4 +72,8 @@ export class SlackOAuthHandler {
   ) {}
 
   async handle(
-    event: Lambda.APIGatewayProxyEventV
+    event: Lambda.APIGatewayProxyEventV2
+  ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
+    const code = event.queryStringParameters?.code;
+    if (!code) {
+ 
