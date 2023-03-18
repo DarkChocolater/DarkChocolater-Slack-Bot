@@ -85,4 +85,8 @@ export class SlackOAuthHandler {
     });
 
     const {
-      team
+      team: { id: teamId },
+      authedUser: { id: userId },
+    } = oAuthV2AccessOutput;
+
+    const [teamAccess, userAccess] = await
