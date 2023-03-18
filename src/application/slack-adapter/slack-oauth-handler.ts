@@ -89,4 +89,9 @@ export class SlackOAuthHandler {
       authedUser: { id: userId },
     } = oAuthV2AccessOutput;
 
-    const [teamAccess, userAccess] = await
+    const [teamAccess, userAccess] = await Promise.all([
+      this.slackOAuthReaderRepository.getTeamAccess(
+        SlackOAuthHandler.APP_ID,
+        teamId
+      ),
+      t
