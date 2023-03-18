@@ -79,4 +79,10 @@ export class SlackOAuthHandler {
       throw new Error("invalid redirect from slack. code was not set.");
     }
 
-    const oAuthV2AccessOut
+    const oAuthV2AccessOutput = await this.slackOAuthService.oauthV2Access({
+      code,
+      appId: SlackOAuthHandler.APP_ID,
+    });
+
+    const {
+      team
