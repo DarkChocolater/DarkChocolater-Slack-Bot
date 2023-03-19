@@ -94,4 +94,11 @@ export class SlackOAuthHandler {
         SlackOAuthHandler.APP_ID,
         teamId
       ),
-      t
+      this.slackOAuthReaderRepository.getUserAccess(
+        SlackOAuthHandler.APP_ID,
+        teamId,
+        userId
+      ),
+    ]);
+
+    
