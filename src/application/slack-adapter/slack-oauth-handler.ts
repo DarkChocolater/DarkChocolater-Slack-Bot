@@ -104,4 +104,8 @@ export class SlackOAuthHandler {
     await Promise.all([
       this.updateAndSaveTeamAccess(
         { appId: SlackOAuthHandler.APP_ID, teamId },
-        team
+        teamAccess,
+        oAuthV2AccessOutput
+      ),
+      this.updateAndSaveUserAccess(
+        { appId: SlackOAu
