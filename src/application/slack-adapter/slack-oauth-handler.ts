@@ -114,4 +114,8 @@ export class SlackOAuthHandler {
       ),
     ]);
 
-    // TODO: send event when a 
+    // TODO: send event when a new oAuth installation is done
+    // await this.slackEventBusService.send(
+    //   {
+    //     type: "oauth_access",
+    //    
