@@ -118,4 +118,9 @@ export class SlackOAuthHandler {
     // await this.slackEventBusService.send(
     //   {
     //     type: "oauth_access",
-    //    
+    //     api_app_id: SlackOAuthHandler.APP_ID,
+    //     team_id: teamId,
+    //     authed_user: { id: userId },
+    //   },
+    //   new Date()
+    
