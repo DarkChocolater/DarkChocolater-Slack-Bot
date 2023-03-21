@@ -108,4 +108,10 @@ export class SlackOAuthHandler {
         oAuthV2AccessOutput
       ),
       this.updateAndSaveUserAccess(
-        { appId: SlackOAu
+        { appId: SlackOAuthHandler.APP_ID, teamId, userId },
+        userAccess,
+        oAuthV2AccessOutput
+      ),
+    ]);
+
+    // TODO: send event when a 
