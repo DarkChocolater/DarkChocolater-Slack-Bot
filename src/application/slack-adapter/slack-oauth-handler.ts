@@ -123,4 +123,10 @@ export class SlackOAuthHandler {
     //     authed_user: { id: userId },
     //   },
     //   new Date()
-    
+    // );
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        ...oAuthV2AccessOutput,
+        accessToken: 
