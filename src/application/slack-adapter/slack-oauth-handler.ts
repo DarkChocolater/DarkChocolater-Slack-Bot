@@ -132,4 +132,13 @@ export class SlackOAuthHandler {
         accessToken: undefined,
         authedUser: {
           ...oAuthV2AccessOutput.authedUser,
-          accessToken: unde
+          accessToken: undefined,
+        },
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  }
+
+  private 
