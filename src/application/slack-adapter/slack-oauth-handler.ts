@@ -129,4 +129,7 @@ export class SlackOAuthHandler {
       statusCode: 200,
       body: JSON.stringify({
         ...oAuthV2AccessOutput,
-        accessToken: 
+        accessToken: undefined,
+        authedUser: {
+          ...oAuthV2AccessOutput.authedUser,
+          accessToken: unde
