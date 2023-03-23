@@ -143,4 +143,8 @@ export class SlackOAuthHandler {
 
   private async updateAndSaveTeamAccess(
     { appId, teamId }: { appId: string; teamId: string },
-    teamAccess: TeamAccess |
+    teamAccess: TeamAccess | undefined,
+    oAuthV2AccessOutput: OAuthV2AccessOutput
+  ) {
+    const updatedTeamAccess = teamAccess
+      ? Sla
