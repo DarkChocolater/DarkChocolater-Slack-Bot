@@ -150,4 +150,11 @@ export class SlackOAuthHandler {
       ? SlackOAuthHandler.mergeTeamAccess(oAuthV2AccessOutput, teamAccess)
       : SlackOAuthHandler.createInitialTeamAccess(oAuthV2AccessOutput);
 
-   
+    await this.slackOAuthWriterRepository.putTeamAccess(
+      appId,
+      teamId,
+      updatedTeamAccess
+    );
+  }
+
+  private asyn
