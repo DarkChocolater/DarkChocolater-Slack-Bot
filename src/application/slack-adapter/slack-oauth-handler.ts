@@ -147,4 +147,7 @@ export class SlackOAuthHandler {
     oAuthV2AccessOutput: OAuthV2AccessOutput
   ) {
     const updatedTeamAccess = teamAccess
-      ? Sla
+      ? SlackOAuthHandler.mergeTeamAccess(oAuthV2AccessOutput, teamAccess)
+      : SlackOAuthHandler.createInitialTeamAccess(oAuthV2AccessOutput);
+
+   
