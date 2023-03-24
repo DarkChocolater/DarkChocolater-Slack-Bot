@@ -166,4 +166,6 @@ export class SlackOAuthHandler {
     userAccess: UserAccess | undefined,
     oAuthV2AccessOutput: OAuthV2AccessOutput
   ) {
-    const updatedUserAccess
+    const updatedUserAccess = userAccess
+      ? SlackOAuthHandler.mergeUserAccess(oAuthV2AccessOutput, userAccess)
+      : SlackOAuthHandler.createInitia
