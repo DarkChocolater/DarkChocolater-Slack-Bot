@@ -168,4 +168,10 @@ export class SlackOAuthHandler {
   ) {
     const updatedUserAccess = userAccess
       ? SlackOAuthHandler.mergeUserAccess(oAuthV2AccessOutput, userAccess)
-      : SlackOAuthHandler.createInitia
+      : SlackOAuthHandler.createInitialUserAccess(oAuthV2AccessOutput);
+
+    await this.slackOAuthWriterRepository.putUserAccess(
+      appId,
+      teamId,
+      userId,
+      updatedUserAcc
