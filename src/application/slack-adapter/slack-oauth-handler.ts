@@ -162,4 +162,8 @@ export class SlackOAuthHandler {
       appId,
       teamId,
       userId,
-    }: { appId: string; teamId: string; use
+    }: { appId: string; teamId: string; userId: string },
+    userAccess: UserAccess | undefined,
+    oAuthV2AccessOutput: OAuthV2AccessOutput
+  ) {
+    const updatedUserAccess
