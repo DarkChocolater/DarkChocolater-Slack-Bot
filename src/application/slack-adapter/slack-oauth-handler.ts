@@ -157,4 +157,9 @@ export class SlackOAuthHandler {
     );
   }
 
-  private asyn
+  private async updateAndSaveUserAccess(
+    {
+      appId,
+      teamId,
+      userId,
+    }: { appId: string; teamId: string; use
