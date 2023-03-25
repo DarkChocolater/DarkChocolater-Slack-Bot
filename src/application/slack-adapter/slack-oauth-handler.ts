@@ -174,4 +174,7 @@ export class SlackOAuthHandler {
       appId,
       teamId,
       userId,
-      updatedUserAcc
+      updatedUserAccess
+    );
+  }
+}
