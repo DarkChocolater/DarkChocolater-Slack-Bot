@@ -9,4 +9,8 @@ export class EventBus {
 
   constructor(private readonly sqsClient: SQSClient = defaultSQSClient) {}
 
-  async publish(event: DomainEvent)
+  async publish(event: DomainEvent): Promise<void> {
+    await this.sqsClient.send(
+      new SendMessageCommand({
+        QueueUrl: EventBus.QUEUE_URL,
+        Me
