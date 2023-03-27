@@ -13,4 +13,6 @@ export class EventBus {
     await this.sqsClient.send(
       new SendMessageCommand({
         QueueUrl: EventBus.QUEUE_URL,
-        Me
+        MessageBody: JSON.stringify(event),
+        // TODO: find a more generic solution
+        MessageGroupId: event.conv
