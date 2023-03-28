@@ -15,4 +15,10 @@ export class EventBus {
         QueueUrl: EventBus.QUEUE_URL,
         MessageBody: JSON.stringify(event),
         // TODO: find a more generic solution
-        MessageGroupId: event.conv
+        MessageGroupId: event.conversationId,
+      })
+    );
+  }
+}
+
+export const globalEventBus = new EventBus();
