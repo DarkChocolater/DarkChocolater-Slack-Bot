@@ -6,4 +6,8 @@ type BaseCommand = {
 };
 
 export type TriggerCompletionCommand = BaseCommand & {
- 
+  type: "TRIGGER_COMPLETION_COMMAND";
+  conversation: Conversation;
+};
+
+export type TriggerSummaryCommand = BaseComma
