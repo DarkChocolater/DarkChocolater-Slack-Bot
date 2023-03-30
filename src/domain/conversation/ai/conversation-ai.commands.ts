@@ -10,4 +10,9 @@ export type TriggerCompletionCommand = BaseCommand & {
   conversation: Conversation;
 };
 
-export type TriggerSummaryCommand = BaseComma
+export type TriggerSummaryCommand = BaseCommand & {
+  type: "TRIGGER_SUMMARY_COMMAND";
+  conversation: Conversation;
+};
+
+export type ConversationAIComm
