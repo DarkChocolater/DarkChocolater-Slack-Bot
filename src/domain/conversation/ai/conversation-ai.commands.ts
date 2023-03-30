@@ -15,4 +15,6 @@ export type TriggerSummaryCommand = BaseCommand & {
   conversation: Conversation;
 };
 
-export type ConversationAIComm
+export type ConversationAICommand =
+  | TriggerCompletionCommand
+  | TriggerSummaryCommand;
