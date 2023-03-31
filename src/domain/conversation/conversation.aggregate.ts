@@ -185,3 +185,127 @@ export class ConversationAggregate {
           summary: cmd.summary,
           summaryTokens: cmd.summaryTokens,
           totalTokensSpent: cmd.totalTokensSpent,
+        });
+
+        if (!this.endConversationIfWentOverLimit()) {
+          await this.triggerCompletionIfNecessary(conversationAIService);
+
+          return;
+        }
+
+        return;
+      }
+      case "BOT_SUMMARY_ERROR": {
+        return this.createAndApply({
+          type: "CONVERSATION_ENDED",
+          conversationId: this.conversationId,
+          reason: {
+            type: "BOT_SUMMARY_ERROR",
+            correlationId: cmd.correlationId,
+            error: {
+              message: cmd.error.message,
+            },
+          },
+        });
+      }
+      default:
+        throw new Error(
+          `unknown type of bot response: '${JSON.stringify(cmd)}'`
+        );
+    }
+  }
+
+  public apply(event: ConversationEvent): void {
+    return this.pApply(event, { stale: true });
+  }
+
+  private assertConversationOngoing(): void {
+    if (this.status.status !== "ONGOING") {
+      throw new Error(
+        `conversation is not ongoing. status: '${this.status.status}'`
+      );
+    }
+  }
+
+  private endConversationIfWentOverLimit(): boolean {
+    if (this.totalTokensSpent > config.conversation.maximumSpentTokens) {
+      this.createAndApply({
+        type: "CONVERSATION_ENDED",
+        conversationId: this.conversationId,
+        reason: {
+          type: "MAXIMUM_CONVERSATION_TOKENS_REACHED",
+          maximumSpentTokens: config.conversation.maximumSpentTokens,
+          totalTokensSpent: this.totalTokensSpent,
+        },
+      });
+
+      return true;
+    }
+
+    return false;
+  }
+
+  private async triggerSummarizationIfNecessary(
+    conversationAIService: ConversationAIService
+  ): Promise<boolean> {
+    // make sure there is no completion or summarization going on
+    if (this.isConversationAIWorking()) {
+      return false;
+    }
+
+    const { minimumTokens, minimumUserMessages } =
+      config.conversation.summarization;
+    const messageCountSinceLastSummary = this.messagesSinceLastSummary.filter(
+      ({ author }) => author.type !== "BOT"
+    ).length;
+
+    if (
+      this.totalTokensSinceLastSummary >= minimumTokens &&
+      messageCountSinceLastSummary > Math.max(1, minimumUserMessages)
+    ) {
+      const { correlationId } = await conversationAIService.trigger({
+        type: "TRIGGER_SUMMARY_COMMAND",
+        conversationId: this.conversationId,
+        conversation: {
+          summary: this.lastSummary?.summary,
+          messages: this.messagesSinceLastSummary,
+        },
+      });
+
+      this.createAndApply({
+        type: "BOT_SUMMARY_REQUESTED",
+        conversationId: this.conversationId,
+        correlationId,
+        lastMessageId:
+          this.messagesSinceLastSummary[
+            this.messagesSinceLastSummary.length - 1
+          ].id,
+      });
+
+      return true;
+    }
+
+    return false;
+  }
+
+  private async triggerCompletionIfNecessary(
+    conversationAIService: ConversationAIService
+  ) {
+    if (
+      // make sure there is no completion or summarization going already
+      this.isConversationAIWorking() ||
+      // make sure the last message belongs to a user
+      this.messagesSinceLastSummary[this.messagesSinceLastSummary.length - 1]
+        ?.author.type !== "USER"
+    ) {
+      return;
+    }
+
+    const { correlationId } = await conversationAIService.trigger({
+      type: "TRIGGER_COMPLETION_COMMAND",
+      conversationId: this.conversationId,
+      conversation: {
+        summary: this.lastSummary?.summary,
+        messages: this.messagesSinceLastSummary,
+      },
+    });
