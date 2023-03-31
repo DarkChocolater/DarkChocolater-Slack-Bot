@@ -309,3 +309,129 @@ export class ConversationAggregate {
         messages: this.messagesSinceLastSummary,
       },
     });
+
+    this.createAndApply({
+      type: "BOT_COMPLETION_REQUESTED",
+      conversationId: this.conversationId,
+      correlationId,
+    });
+  }
+
+  private isConversationAIWorking(): boolean {
+    return (
+      this.aiStatus.completion.status === "PROCESSING" ||
+      this.aiStatus.summary.status === "PROCESSING"
+    );
+  }
+
+  private addConversationMessage({
+    message,
+    tokens,
+  }: {
+    message: ConversationMessage;
+    tokens: number;
+  }): void {
+    this.messagesSinceLastSummary.push(message);
+    this.totalTokensSinceLastSummary += tokens;
+  }
+
+  private createAndApply(
+    event: DistributiveOmit<ConversationEvent, "eventId">
+  ): void {
+    return this.pApply(
+      {
+        eventId: this.nextEventId,
+        ...event,
+      } as ConversationEvent,
+      { stale: false }
+    );
+  }
+
+  private pApply(
+    event: ConversationEvent,
+    { stale }: { stale: boolean }
+  ): void {
+    if (event.eventId !== this.nextEventId) {
+      throw new Error("events tried to be replayed out of order");
+    }
+
+    this.nextEventId += 1;
+
+    if (!stale) {
+      this.newEvents.push(event);
+    }
+
+    switch (event.type) {
+      case "CONVERSATION_ENDED": {
+        return this.applyConversationEnded(event);
+      }
+      case "USER_MESSAGE_ADDED":
+        return this.addConversationMessage({
+          message: {
+            id: event.message.id,
+            text: event.message.text,
+            author: { type: "USER", id: event.message.author.id },
+          },
+          tokens: event.message.approximateTokens,
+        });
+      case "BOT_COMPLETION_REQUESTED": {
+        this.aiStatus = {
+          ...this.aiStatus,
+          completion: {
+            status: "PROCESSING",
+            correlationId: event.correlationId,
+          },
+        };
+
+        return;
+      }
+      case "BOT_RESPONSE_ADDED": {
+        this.aiStatus = { ...this.aiStatus, completion: { status: "IDLE" } };
+        this.totalTokensSpent += event.totalTokensSpent;
+
+        return this.addConversationMessage({
+          message: {
+            id: event.message.id,
+            text: event.message.text,
+            author: { type: "BOT" },
+          },
+          tokens: event.message.tokens,
+        });
+      }
+      case "BOT_SUMMARY_REQUESTED": {
+        this.aiStatus = {
+          ...this.aiStatus,
+          summary: {
+            status: "PROCESSING",
+            correlationId: event.correlationId,
+            lastMessageId: event.lastMessageId,
+          },
+        };
+
+        return;
+      }
+      case "BOT_SUMMARY_ADDED": {
+        if (this.aiStatus.summary.status === "IDLE") {
+          throw new Error("can not add summary when not asked for");
+        }
+
+        const { lastMessageId } = this.aiStatus.summary;
+
+        this.aiStatus = {
+          ...this.aiStatus,
+          summary: { status: "IDLE" },
+        };
+
+        this.totalTokensSpent += event.totalTokensSpent;
+
+        this.lastSummary = { summary: event.summary, lastMessageId };
+
+        // remove all messages up until the summarization
+        const index = this.messagesSinceLastSummary.findIndex(
+          ({ id }) => id === lastMessageId
+        );
+        this.messagesSinceLastSummary = this.messagesSinceLastSummary.slice(
+          index + 1
+        );
+
+        return;
