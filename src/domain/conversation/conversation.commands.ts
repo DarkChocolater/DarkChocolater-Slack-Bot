@@ -4,4 +4,7 @@ type UserMessage = {
   author: { id: string };
 };
 
-typ
+type BaseCommand = { conversationId: string };
+
+export type AddUserMessageCommand = BaseCommand & {
+  type: "ADD
