@@ -435,3 +435,39 @@ export class ConversationAggregate {
         );
 
         return;
+      }
+    }
+  }
+
+  private applyConversationEnded(event: ConversationEnded): void {
+    switch (event.reason.type) {
+      case "MAXIMUM_CONVERSATION_TOKENS_REACHED": {
+        this.status = {
+          status: "ENDED",
+        };
+
+        return;
+      }
+      case "BOT_COMPLETION_ERROR": {
+        this.status = {
+          status: "ERROR",
+          message: `bot response error: ${event.reason.error.message}`,
+        };
+
+        this.aiStatus = { ...this.aiStatus, completion: { status: "IDLE" } };
+
+        return;
+      }
+      case "BOT_SUMMARY_ERROR": {
+        this.status = {
+          status: "ERROR",
+          message: `bot summary error: ${event.reason.error.message}`,
+        };
+
+        this.aiStatus = { ...this.aiStatus, summary: { status: "IDLE" } };
+
+        return;
+      }
+    }
+  }
+}
