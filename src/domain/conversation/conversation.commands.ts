@@ -12,4 +12,9 @@ export type AddUserMessageCommand = BaseCommand & {
 };
 
 export type CreateConversationCommand = BaseCommand & {
-  type
+  type: "CREATE_CONVERSATION_COMMAND";
+  initialMessage: UserMessage;
+  metadata: Record<string, string>;
+};
+
+export type ProcessCompl
