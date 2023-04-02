@@ -17,4 +17,7 @@ export type CreateConversationCommand = BaseCommand & {
   metadata: Record<string, string>;
 };
 
-export type ProcessCompl
+export type ProcessCompletionResponseCommand =
+  | (BaseCommand & {
+      type: "PROCESS_COMPLETION_RESPONSE_COMMAND";
+      responseType: "BOT_COMPLET
