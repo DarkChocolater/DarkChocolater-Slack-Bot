@@ -20,4 +20,9 @@ export type CreateConversationCommand = BaseCommand & {
 export type ProcessCompletionResponseCommand =
   | (BaseCommand & {
       type: "PROCESS_COMPLETION_RESPONSE_COMMAND";
-      responseType: "BOT_COMPLET
+      responseType: "BOT_COMPLETION_SUCCESS";
+      correlationId: string;
+      message: string;
+      messageTokens: number;
+      totalTokensSpent: number;
+    })
