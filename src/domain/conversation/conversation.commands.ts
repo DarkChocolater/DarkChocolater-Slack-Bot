@@ -35,4 +35,7 @@ export type ProcessCompletionResponseCommand =
       };
     });
 
-export type ProcessS
+export type ProcessSummaryResponseCommand =
+  | (BaseCommand & {
+      type: "PROCESS_SUMMARY_RESPONSE_COMMAND";
+      responseType: "BOT_SUMMARY_SUC
