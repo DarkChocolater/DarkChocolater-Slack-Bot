@@ -26,3 +26,6 @@ export type ProcessCompletionResponseCommand =
       messageTokens: number;
       totalTokensSpent: number;
     })
+  | (BaseCommand & {
+      type: "PROCESS_COMPLETION_RESPONSE_COMMAND";
+      responseType: "BOT_COMPL
