@@ -28,4 +28,11 @@ export type ProcessCompletionResponseCommand =
     })
   | (BaseCommand & {
       type: "PROCESS_COMPLETION_RESPONSE_COMMAND";
-      responseType: "BOT_COMPL
+      responseType: "BOT_COMPLETION_ERROR";
+      correlationId: string;
+      error: {
+        message: string;
+      };
+    });
+
+export type ProcessS
