@@ -38,4 +38,8 @@ export type ProcessCompletionResponseCommand =
 export type ProcessSummaryResponseCommand =
   | (BaseCommand & {
       type: "PROCESS_SUMMARY_RESPONSE_COMMAND";
-      responseType: "BOT_SUMMARY_SUC
+      responseType: "BOT_SUMMARY_SUCCESS";
+      correlationId: string;
+      summary: string;
+      summaryTokens: number;
+      totalTokensSpent: numb
