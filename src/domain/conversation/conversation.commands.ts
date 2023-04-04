@@ -54,4 +54,7 @@ export type ProcessSummaryResponseCommand =
     });
 
 export type ConversationCommand =
-  | 
+  | AddUserMessageCommand
+  | CreateConversationCommand
+  | ProcessCompletionResponseCommand
+  | ProcessSummaryResponseCommand;
