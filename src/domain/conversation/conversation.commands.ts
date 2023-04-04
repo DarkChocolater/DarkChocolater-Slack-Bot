@@ -47,4 +47,11 @@ export type ProcessSummaryResponseCommand =
   | (BaseCommand & {
       type: "PROCESS_SUMMARY_RESPONSE_COMMAND";
       responseType: "BOT_SUMMARY_ERROR";
-      correlatio
+      correlationId: string;
+      error: {
+        message: string;
+      };
+    });
+
+export type ConversationCommand =
+  | 
