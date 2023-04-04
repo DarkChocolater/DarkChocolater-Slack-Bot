@@ -42,4 +42,9 @@ export type ProcessSummaryResponseCommand =
       correlationId: string;
       summary: string;
       summaryTokens: number;
-      totalTokensSpent: numb
+      totalTokensSpent: number;
+    })
+  | (BaseCommand & {
+      type: "PROCESS_SUMMARY_RESPONSE_COMMAND";
+      responseType: "BOT_SUMMARY_ERROR";
+      correlatio
