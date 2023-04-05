@@ -3,4 +3,9 @@ type BaseEvent = {
   conversationId: string;
 };
 
-export type Conversat
+export type ConversationStarted = BaseEvent & {
+  type: "CONVERSATION_STARTED";
+  metadata: Record<string, string>;
+};
+
+export type Use
