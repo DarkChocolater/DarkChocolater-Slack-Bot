@@ -8,4 +8,10 @@ export type ConversationStarted = BaseEvent & {
   metadata: Record<string, string>;
 };
 
-export type Use
+export type UserMessageAdded = BaseEvent & {
+  type: "USER_MESSAGE_ADDED";
+  message: {
+    id: string;
+    text: string;
+    author: { id: string };
+    appro
