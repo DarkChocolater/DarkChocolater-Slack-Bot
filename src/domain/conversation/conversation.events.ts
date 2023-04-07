@@ -19,4 +19,11 @@ export type UserMessageAdded = BaseEvent & {
 };
 
 export type BotCompletionRequested = BaseEvent & {
-  type: "BOT_COMPLETION_RE
+  type: "BOT_COMPLETION_REQUESTED";
+  correlationId: string;
+};
+
+export type BotResponseAdded = BaseEvent & {
+  type: "BOT_RESPONSE_ADDED";
+  correlationId: string;
+  m
