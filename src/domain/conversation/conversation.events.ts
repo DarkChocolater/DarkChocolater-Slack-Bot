@@ -34,4 +34,8 @@ export type BotResponseAdded = BaseEvent & {
   totalTokensSpent: number;
 };
 
-export type Bot
+export type BotSummaryRequested = BaseEvent & {
+  type: "BOT_SUMMARY_REQUESTED";
+  correlationId: string;
+  lastMessageId: string;
+}
