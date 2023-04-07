@@ -14,4 +14,9 @@ export type UserMessageAdded = BaseEvent & {
     id: string;
     text: string;
     author: { id: string };
-    appro
+    approximateTokens: number;
+  };
+};
+
+export type BotCompletionRequested = BaseEvent & {
+  type: "BOT_COMPLETION_RE
