@@ -38,4 +38,11 @@ export type BotSummaryRequested = BaseEvent & {
   type: "BOT_SUMMARY_REQUESTED";
   correlationId: string;
   lastMessageId: string;
-}
+};
+
+export type BotSummaryAdded = BaseEvent & {
+  type: "BOT_SUMMARY_ADDED";
+  correlationId: string;
+  summary: string;
+  summaryTokens: number;
+  tot
