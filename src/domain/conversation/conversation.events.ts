@@ -52,4 +52,7 @@ export type ConversationEnded = BaseEvent & {
   type: "CONVERSATION_ENDED";
   reason:
     | {
-        type: "
+        type: "MAXIMUM_CONVERSATION_TOKENS_REACHED";
+        maximumSpentTokens: number;
+        totalTokensSpent: number;
+      
