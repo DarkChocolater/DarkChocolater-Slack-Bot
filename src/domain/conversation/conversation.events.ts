@@ -45,4 +45,11 @@ export type BotSummaryAdded = BaseEvent & {
   correlationId: string;
   summary: string;
   summaryTokens: number;
-  tot
+  totalTokensSpent: number;
+};
+
+export type ConversationEnded = BaseEvent & {
+  type: "CONVERSATION_ENDED";
+  reason:
+    | {
+        type: "
