@@ -55,4 +55,11 @@ export type ConversationEnded = BaseEvent & {
         type: "MAXIMUM_CONVERSATION_TOKENS_REACHED";
         maximumSpentTokens: number;
         totalTokensSpent: number;
-      
+      }
+    | {
+        type: "BOT_COMPLETION_ERROR";
+        correlationId: string;
+        error: { message: string };
+      }
+    | {
+        ty
