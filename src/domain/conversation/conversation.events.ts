@@ -62,4 +62,10 @@ export type ConversationEnded = BaseEvent & {
         error: { message: string };
       }
     | {
-        ty
+        type: "BOT_SUMMARY_ERROR";
+        correlationId: string;
+        error: { message: string };
+      };
+};
+
+export type Con
