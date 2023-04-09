@@ -73,4 +73,6 @@ export type ConversationEvent =
   | UserMessageAdded
   | BotCompletionRequested
   | BotResponseAdded
-  | BotSu
+  | BotSummaryRequested
+  | BotSummaryAdded
+  | ConversationEnded;

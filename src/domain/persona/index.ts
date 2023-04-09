@@ -1,0 +1,1 @@
+import { Persona } from "./base-persona/base-persona.dto
