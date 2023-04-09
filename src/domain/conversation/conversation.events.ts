@@ -68,4 +68,9 @@ export type ConversationEnded = BaseEvent & {
       };
 };
 
-export type Con
+export type ConversationEvent =
+  | ConversationStarted
+  | UserMessageAdded
+  | BotCompletionRequested
+  | BotResponseAdded
+  | BotSu
