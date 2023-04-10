@@ -3,4 +3,5 @@ import { slackSoftwareEngPersona } from "./slack-software-eng/slack-software-eng
 
 const personas = [slackSoftwareEngPersona];
 
-exp
+export function getPersonaByConfigName(configName: string): Persona {
+  const persona = personas.find((p) => p.configName === configName)
