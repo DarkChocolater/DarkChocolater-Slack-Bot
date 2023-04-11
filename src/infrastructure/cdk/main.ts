@@ -8,3 +8,5 @@ import {
   StackProps,
 } from "aws-cdk-lib";
 import { AttributeType, BillingMode, Table } from "aws-cdk-lib/aws-dynamodb";
+import { Secret } from "aws-cdk-lib/aws-secretsmanager";
+import { DeduplicationScope, Queue } from "aws-cdk
