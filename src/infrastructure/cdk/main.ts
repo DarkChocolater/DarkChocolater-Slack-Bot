@@ -16,4 +16,8 @@ import { SlackResources } from "./slack-resources";
 import config from "../../config";
 import { EnvKey } from "../../env";
 
-const CONVERSATIO
+const CONVERSATION_LAMBDA_TIMEOUT = Duration.seconds(15);
+const OPENAI_LAMBDA_TIMEOUT = Duration.seconds(30);
+
+export class MyStack extends Stack {
+  cons
