@@ -12,4 +12,8 @@ import { Secret } from "aws-cdk-lib/aws-secretsmanager";
 import { DeduplicationScope, Queue } from "aws-cdk-lib/aws-sqs";
 import { Construct } from "constructs";
 import { CustomNodejsFunction } from "./custom-nodejs-function";
-import { SlackR
+import { SlackResources } from "./slack-resources";
+import config from "../../config";
+import { EnvKey } from "../../env";
+
+const CONVERSATIO
