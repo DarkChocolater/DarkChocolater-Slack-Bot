@@ -20,4 +20,7 @@ const CONVERSATION_LAMBDA_TIMEOUT = Duration.seconds(15);
 const OPENAI_LAMBDA_TIMEOUT = Duration.seconds(30);
 
 export class MyStack extends Stack {
-  cons
+  constructor(scope: Construct, id: string, props: StackProps = {}) {
+    super(scope, id, props);
+
+    
