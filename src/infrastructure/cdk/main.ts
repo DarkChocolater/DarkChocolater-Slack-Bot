@@ -33,4 +33,8 @@ export class MyStack extends Stack {
       description: "Slack Bot Http Api",
     });
 
-    const conversationAggreg
+    const conversationAggregateTable = new Table(
+      this,
+      "ConversationAggregateTable",
+      {
+        partitionKey: { name: "PK", type: AttributeT
