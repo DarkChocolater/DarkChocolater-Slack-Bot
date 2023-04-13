@@ -23,4 +23,10 @@ export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);
 
-    
+    const secret = Secret.fromSecretCompleteArn(
+      this,
+      "WiseGPTSecrets",
+      config.aws.secretArn
+    );
+
+    const httpApi = n
