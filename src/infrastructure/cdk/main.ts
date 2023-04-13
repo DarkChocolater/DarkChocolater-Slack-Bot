@@ -29,4 +29,8 @@ export class MyStack extends Stack {
       config.aws.secretArn
     );
 
-    const httpApi = n
+    const httpApi = new apigwv2.HttpApi(this, "HttpApi", {
+      description: "Slack Bot Http Api",
+    });
+
+    const conversationAggreg
