@@ -45,4 +45,7 @@ export class MyStack extends Stack {
 
     const conversationCommandSQS = new Queue(this, "ConversationCommandSQS", {
       fifo: true,
-      deduplicatio
+      deduplicationScope: DeduplicationScope.MESSAGE_GROUP,
+      // TODO: figure out a better way
+      contentBasedDeduplication: true,
+      
