@@ -41,4 +41,8 @@ export class MyStack extends Stack {
         sortKey: { name: "SK", type: AttributeType.NUMBER },
         billingMode: BillingMode.PAY_PER_REQUEST,
       }
-    )
+    );
+
+    const conversationCommandSQS = new Queue(this, "ConversationCommandSQS", {
+      fifo: true,
+      deduplicatio
