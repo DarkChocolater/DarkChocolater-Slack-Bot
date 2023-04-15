@@ -51,4 +51,7 @@ export class MyStack extends Stack {
       visibilityTimeout: CONVERSATION_LAMBDA_TIMEOUT,
     });
 
-    const conversationEventSQS = new Queue(this, "Convers
+    const conversationEventSQS = new Queue(this, "ConversationEventSQS", {
+      fifo: true,
+      deduplicationScope: DeduplicationScope.MESSAGE_GROUP,
+      // TODO: figure out a b
