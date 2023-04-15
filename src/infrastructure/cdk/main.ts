@@ -48,4 +48,7 @@ export class MyStack extends Stack {
       deduplicationScope: DeduplicationScope.MESSAGE_GROUP,
       // TODO: figure out a better way
       contentBasedDeduplication: true,
-      
+      visibilityTimeout: CONVERSATION_LAMBDA_TIMEOUT,
+    });
+
+    const conversationEventSQS = new Queue(this, "Convers
