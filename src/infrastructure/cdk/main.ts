@@ -54,4 +54,10 @@ export class MyStack extends Stack {
     const conversationEventSQS = new Queue(this, "ConversationEventSQS", {
       fifo: true,
       deduplicationScope: DeduplicationScope.MESSAGE_GROUP,
-      // TODO: figure out a b
+      // TODO: figure out a better way
+      contentBasedDeduplication: true,
+    });
+
+    new SlackResources(this, {
+      appId: config.slack.appId,
+      authType: conf
