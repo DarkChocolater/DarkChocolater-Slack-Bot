@@ -60,4 +60,11 @@ export class MyStack extends Stack {
 
     new SlackResources(this, {
       appId: config.slack.appId,
-      authType: conf
+      authType: config.slack.authType,
+      secret,
+      httpApi,
+      conversationCommandSQS,
+      conversationEventSQS,
+    });
+
+    const openAIL
