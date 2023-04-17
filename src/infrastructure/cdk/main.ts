@@ -71,4 +71,7 @@ export class MyStack extends Stack {
       entry: resolve(__dirname, "../lambdas/open-ai.lambda.ts"),
       description:
         "Listens and processes all OpenAI Commands like Completion and Summary",
-  
+      timeout: OPENAI_LAMBDA_TIMEOUT,
+      environment: {
+        OPENAI_SECRET_ARN: secret.secretArn,
+        COMMAND_B
