@@ -68,4 +68,7 @@ export class MyStack extends Stack {
     });
 
     const openAILambda = new CustomNodejsFunction(this, "OpenAILambda", {
-      entry: resolve(__dirname, "../lambdas/open
+      entry: resolve(__dirname, "../lambdas/open-ai.lambda.ts"),
+      description:
+        "Listens and processes all OpenAI Commands like Completion and Summary",
+  
