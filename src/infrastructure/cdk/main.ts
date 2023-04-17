@@ -67,4 +67,5 @@ export class MyStack extends Stack {
       conversationEventSQS,
     });
 
-    const openAIL
+    const openAILambda = new CustomNodejsFunction(this, "OpenAILambda", {
+      entry: resolve(__dirname, "../lambdas/open
