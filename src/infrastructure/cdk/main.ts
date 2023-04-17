@@ -74,4 +74,8 @@ export class MyStack extends Stack {
       timeout: OPENAI_LAMBDA_TIMEOUT,
       environment: {
         OPENAI_SECRET_ARN: secret.secretArn,
-        COMMAND_B
+        COMMAND_BUS_SQS: conversationCommandSQS.queueUrl,
+      } as Record<EnvKey, string>,
+    });
+
+    const conversationLambda = new C
