@@ -78,4 +78,8 @@ export class MyStack extends Stack {
       } as Record<EnvKey, string>,
     });
 
-    const conversationLambda = new C
+    const conversationLambda = new CustomNodejsFunction(
+      this,
+      "ConversationLambda",
+      {
+        entry: resolve(__dirname, "../lambdas/c
