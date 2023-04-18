@@ -82,4 +82,6 @@ export class MyStack extends Stack {
       this,
       "ConversationLambda",
       {
-        entry: resolve(__dirname, "../lambdas/c
+        entry: resolve(__dirname, "../lambdas/conversation.lambda.ts"),
+        description: "Listens and processes Conversation API Commands",
+        timeout: CONVER
