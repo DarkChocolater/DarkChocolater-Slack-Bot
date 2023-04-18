@@ -84,4 +84,7 @@ export class MyStack extends Stack {
       {
         entry: resolve(__dirname, "../lambdas/conversation.lambda.ts"),
         description: "Listens and processes Conversation API Commands",
-        timeout: CONVER
+        timeout: CONVERSATION_LAMBDA_TIMEOUT,
+        environment: {
+          EVENT_BUS_SQS: conversationEventSQS.queueUrl,
+          DYNAMODB_TABLE_CO
