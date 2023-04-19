@@ -87,4 +87,6 @@ export class MyStack extends Stack {
         timeout: CONVERSATION_LAMBDA_TIMEOUT,
         environment: {
           EVENT_BUS_SQS: conversationEventSQS.queueUrl,
-          DYNAMODB_TABLE_CO
+          DYNAMODB_TABLE_CONVERSATION_AGGREGATE:
+            conversationAggregateTable.tableName,
+          OPENAI_LAMBDA_ARN: openAILambda.functionArn
