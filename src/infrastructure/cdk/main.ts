@@ -89,4 +89,10 @@ export class MyStack extends Stack {
           EVENT_BUS_SQS: conversationEventSQS.queueUrl,
           DYNAMODB_TABLE_CONVERSATION_AGGREGATE:
             conversationAggregateTable.tableName,
-          OPENAI_LAMBDA_ARN: openAILambda.functionArn
+          OPENAI_LAMBDA_ARN: openAILambda.functionArn,
+        } as Record<EnvKey, string>,
+      }
+    );
+
+    // openai lambda permissions
+    secret.grantR
