@@ -95,4 +95,8 @@ export class MyStack extends Stack {
     );
 
     // openai lambda permissions
-    secret.grantR
+    secret.grantRead(openAILambda);
+    conversationCommandSQS.grantSendMessages(openAILambda);
+
+    // conversation api permissions
+    conversationAggregateTable.gr
