@@ -101,4 +101,8 @@ export class MyStack extends Stack {
     // conversation api permissions
     conversationAggregateTable.grantReadWriteData(conversationLambda);
     conversationEventSQS.grantSendMessages(conversationLambda);
-    openAIL
+    openAILambda.grantInvoke(conversationLambda);
+
+    // bind conversation api to queues
+    conversationLambda.addEventSource(
+      new L
