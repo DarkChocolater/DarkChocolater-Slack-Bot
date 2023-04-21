@@ -99,4 +99,6 @@ export class MyStack extends Stack {
     conversationCommandSQS.grantSendMessages(openAILambda);
 
     // conversation api permissions
-    conversationAggregateTable.gr
+    conversationAggregateTable.grantReadWriteData(conversationLambda);
+    conversationEventSQS.grantSendMessages(conversationLambda);
+    openAIL
