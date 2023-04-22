@@ -105,4 +105,9 @@ export class MyStack extends Stack {
 
     // bind conversation api to queues
     conversationLambda.addEventSource(
-      new L
+      new LambdaEventSources.SqsEventSource(conversationCommandSQS, {
+        enabled: true,
+        batchSize: 1,
+      })
+    );
+  
