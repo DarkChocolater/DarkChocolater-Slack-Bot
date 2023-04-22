@@ -110,4 +110,11 @@ export class MyStack extends Stack {
         batchSize: 1,
       })
     );
-  
+  }
+}
+
+const app = new App();
+
+new MyStack(app, config.aws.stackName);
+
+app.synth();
