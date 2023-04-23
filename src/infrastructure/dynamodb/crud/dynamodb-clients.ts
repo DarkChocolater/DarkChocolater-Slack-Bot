@@ -7,3 +7,7 @@ export const defaultDynamoDBDocumentClient = DynamoDBDocumentClient.from(
   defaultDynamoDBClient,
   {
     marshallOptions: {
+      convertEmptyValues: true,
+    },
+  }
+);
