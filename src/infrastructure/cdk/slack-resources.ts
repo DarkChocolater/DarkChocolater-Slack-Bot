@@ -171,3 +171,4 @@ export class SlackResources extends Construct {
       description: "Slack Events Request Url to use in Slack API Dashboard",
     });
   }
+}
