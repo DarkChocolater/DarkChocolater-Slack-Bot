@@ -7,4 +7,6 @@ export abstract class SlackOAuthBaseRepository {
   protected static readonly PK_FIELD = "PK";
   protected static readonly SK_FIELD = "SK";
   // constant value to use for team installation SK
-  protected static readonly SK_TEAM_ACCESS_CONST = "#T
+  protected static readonly SK_TEAM_ACCESS_CONST = "#TEAM#ACCESS";
+  // prefix to use for individual user rows SK
+  protected static readonly SK_USER_ACCESS_PREFIX_
