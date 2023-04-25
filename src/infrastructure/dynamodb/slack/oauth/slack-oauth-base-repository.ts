@@ -12,4 +12,11 @@ export abstract class SlackOAuthBaseRepository {
   protected static readonly SK_USER_ACCESS_PREFIX_CONST = "#USRACC#";
 
   protected static buildPK(appId: string, teamId: string): string {
-    return `${ap
+    return `${appId}#${teamId}`;
+  }
+
+  protected static buildSKTeamAccess(): string {
+    return this.SK_TEAM_ACCESS_CONST;
+  }
+
+  protected static buildS
