@@ -19,4 +19,8 @@ export abstract class SlackOAuthBaseRepository {
     return this.SK_TEAM_ACCESS_CONST;
   }
 
-  protected static buildS
+  protected static buildSKUserAccess(userId: string): string {
+    return `${this.SK_USER_ACCESS_PREFIX_CONST}${userId}`;
+  }
+
+  protected co
