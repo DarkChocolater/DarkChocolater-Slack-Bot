@@ -23,4 +23,7 @@ export abstract class SlackOAuthBaseRepository {
     return `${this.SK_USER_ACCESS_PREFIX_CONST}${userId}`;
   }
 
-  protected co
+  protected constructor(
+    protected pClient: DynamoDBDocumentClient = defaultDynamoDBDocumentClient
+  ) {}
+}
