@@ -11,4 +11,7 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
     appId: string,
     teamId: string
   ): Promise<TeamAccess | undefined> {
-    const 
+    const pk = SlackOAuthBaseRepository.buildPK(appId, teamId);
+    const sk = SlackOAuthBaseRepository.buildSKTeamAccess();
+
+    const result = await t
