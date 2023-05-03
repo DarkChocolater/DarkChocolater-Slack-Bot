@@ -14,4 +14,7 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
     const pk = SlackOAuthBaseRepository.buildPK(appId, teamId);
     const sk = SlackOAuthBaseRepository.buildSKTeamAccess();
 
-    const result = await t
+    const result = await this.pClient.send(
+      new GetCommand({
+        TableName: SlackOAuthBaseRepository.TABLE_NAME,
+        Key: 
