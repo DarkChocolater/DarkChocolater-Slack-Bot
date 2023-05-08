@@ -22,4 +22,12 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
           [SlackOAuthBaseRepository.SK_FIELD]: sk,
         },
       })
-  
+    );
+
+    if (!result.Item) {
+      return undefined;
+    }
+
+    const {
+      [SlackOAuthReaderRepository.PK_FIELD]: _pk,
+      [SlackOAuth
