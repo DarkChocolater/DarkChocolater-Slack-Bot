@@ -30,4 +30,11 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
 
     const {
       [SlackOAuthReaderRepository.PK_FIELD]: _pk,
-      [SlackOAuth
+      [SlackOAuthReaderRepository.SK_FIELD]: _sk,
+      ...rest
+    } = result.Item;
+
+    return rest as TeamAccess;
+  }
+
+  async getUserAcc
