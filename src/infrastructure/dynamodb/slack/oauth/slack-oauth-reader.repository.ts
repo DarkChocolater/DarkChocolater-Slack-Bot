@@ -49,4 +49,10 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
       new GetCommand({
         TableName: SlackOAuthBaseRepository.TABLE_NAME,
         Key: {
-          [SlackOAuthBaseRepositor
+          [SlackOAuthBaseRepository.PK_FIELD]: pk,
+          [SlackOAuthBaseRepository.SK_FIELD]: sk,
+        },
+      })
+    );
+
+    if (!result.Item) {
