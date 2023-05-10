@@ -56,3 +56,9 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
     );
 
     if (!result.Item) {
+      return undefined;
+    }
+
+    const {
+      [SlackOAuthReaderRepository.PK_FIELD]: _pk,
+      [SlackO
