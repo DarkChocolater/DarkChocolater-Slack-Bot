@@ -66,4 +66,5 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
     } = result.Item;
 
     return rest as UserAccess;
-  
+  }
+}
