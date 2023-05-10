@@ -61,4 +61,9 @@ export class SlackOAuthReaderRepository extends SlackOAuthBaseRepository {
 
     const {
       [SlackOAuthReaderRepository.PK_FIELD]: _pk,
-      [SlackO
+      [SlackOAuthReaderRepository.SK_FIELD]: _sk,
+      ...rest
+    } = result.Item;
+
+    return rest as UserAccess;
+  
