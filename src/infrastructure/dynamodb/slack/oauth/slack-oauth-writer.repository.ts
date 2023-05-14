@@ -17,4 +17,7 @@ export class SlackOAuthWriterRepository extends SlackOAuthBaseRepository {
 
     await this.pClient.send(
       new PutCommand({
-        TableName: S
+        TableName: SlackOAuthBaseRepository.TABLE_NAME,
+        Item: {
+          ...teamAccess,
+          [SlackOAuthBaseRepository.PK
