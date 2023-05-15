@@ -20,4 +20,13 @@ export class SlackOAuthWriterRepository extends SlackOAuthBaseRepository {
         TableName: SlackOAuthBaseRepository.TABLE_NAME,
         Item: {
           ...teamAccess,
-          [SlackOAuthBaseRepository.PK
+          [SlackOAuthBaseRepository.PK_FIELD]: pk,
+          [SlackOAuthBaseRepository.SK_FIELD]: sk,
+        },
+      })
+    );
+  }
+
+  async putUserAccess(
+    appId: string,
+    teamId
