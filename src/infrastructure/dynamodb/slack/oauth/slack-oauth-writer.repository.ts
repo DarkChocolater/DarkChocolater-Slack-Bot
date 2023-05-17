@@ -29,4 +29,8 @@ export class SlackOAuthWriterRepository extends SlackOAuthBaseRepository {
 
   async putUserAccess(
     appId: string,
-    teamId
+    teamId: string,
+    userId: string,
+    userAccess: UserAccess
+  ): Promise<void> {
+    const pk = SlackOAuthBaseRepository.bu
