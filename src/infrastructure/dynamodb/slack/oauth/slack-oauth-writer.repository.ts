@@ -33,4 +33,7 @@ export class SlackOAuthWriterRepository extends SlackOAuthBaseRepository {
     userId: string,
     userAccess: UserAccess
   ): Promise<void> {
-    const pk = SlackOAuthBaseRepository.bu
+    const pk = SlackOAuthBaseRepository.buildPK(appId, teamId);
+    const sk = SlackOAuthBaseRepository.buildSKUserAccess(userId);
+
+    await this.pClient.s
