@@ -40,4 +40,10 @@ export class SlackOAuthWriterRepository extends SlackOAuthBaseRepository {
       new PutCommand({
         TableName: SlackOAuthBaseRepository.TABLE_NAME,
         Item: {
-         
+          ...userAccess,
+          [SlackOAuthBaseRepository.PK_FIELD]: pk,
+          [SlackOAuthBaseRepository.SK_FIELD]: sk,
+        },
+      })
+    );
+  }
