@@ -4,4 +4,9 @@ import { ConversationCommand } from "../../domain/conversation/conversation.comm
 
 class ConversationLambda extends EventListenerLambda {
   constructor(
-    private readonly conversationCommandHandler = new Convers
+    private readonly conversationCommandHandler = new ConversationCommandHandler()
+  ) {
+    super({ lambdaName: "ConversationLambda" });
+  }
+
+  protected async handleSQSEvent({
