@@ -9,4 +9,8 @@ class ConversationLambda extends EventListenerLambda {
     super({ lambdaName: "ConversationLambda" });
   }
 
-  protected async handleSQSEvent({
+  protected async handleSQSEvent({ Records }: SQSEvent) {
+    try {
+      const cmd: ConversationCommand = JSON.parse(Records[0].body);
+
+      await this.con
