@@ -13,4 +13,7 @@ class ConversationLambda extends EventListenerLambda {
     try {
       const cmd: ConversationCommand = JSON.parse(Records[0].body);
 
-      await this.con
+      await this.conversationCommandHandler.execute(cmd);
+    } catch (err) {
+      // TODO: add better error handling, DLQ etc.
+      cons
