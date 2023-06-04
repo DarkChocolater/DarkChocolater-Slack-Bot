@@ -16,4 +16,8 @@ class ConversationLambda extends EventListenerLambda {
       await this.conversationCommandHandler.execute(cmd);
     } catch (err) {
       // TODO: add better error handling, DLQ etc.
-      cons
+      console.error(
+        JSON.stringify({
+          ...this.baseProps,
+          method: "handleSQSEvent",
+          // TODO
