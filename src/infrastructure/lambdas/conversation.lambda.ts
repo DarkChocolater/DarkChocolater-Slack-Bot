@@ -20,4 +20,7 @@ class ConversationLambda extends EventListenerLambda {
         JSON.stringify({
           ...this.baseProps,
           method: "handleSQSEvent",
-          // TODO
+          // TODO: add better logger
+          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
+        })
+     
