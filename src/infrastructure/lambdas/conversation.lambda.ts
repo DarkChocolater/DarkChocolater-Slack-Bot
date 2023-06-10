@@ -23,4 +23,9 @@ class ConversationLambda extends EventListenerLambda {
           // TODO: add better logger
           err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
         })
-     
+      );
+    }
+  }
+}
+
+export const handler = createHandler(new ConversationLambda());
