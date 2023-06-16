@@ -4,4 +4,5 @@ import {
   InvokeCommand,
   LambdaClient,
 } from "@aws-sdk/client-lambda";
-import { ConversationAICommand } 
+import { ConversationAICommand } from "../../../domain/conversation/ai/conversation-ai.commands";
+import { ConversationAIService } from "../../../domain/conversa
