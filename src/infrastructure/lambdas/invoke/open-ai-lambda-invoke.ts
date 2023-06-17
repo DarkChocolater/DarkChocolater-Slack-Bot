@@ -8,4 +8,7 @@ import { ConversationAICommand } from "../../../domain/conversation/ai/conversat
 import { ConversationAIService } from "../../../domain/conversation/ai/conversation-ai.service";
 import { getEnv } from "../../../env";
 
-export class OpenAILambdaInvoke implements ConversationAISer
+export class OpenAILambdaInvoke implements ConversationAIService {
+  private static readonly LAMBDA_ARN = getEnv("OPENAI_LAMBDA_ARN");
+
+  constructor(private readonly client = new 
