@@ -11,4 +11,8 @@ import { getEnv } from "../../../env";
 export class OpenAILambdaInvoke implements ConversationAIService {
   private static readonly LAMBDA_ARN = getEnv("OPENAI_LAMBDA_ARN");
 
-  constructor(private readonly client = new 
+  constructor(private readonly client = new LambdaClient({})) {}
+
+  async trigger(
+    input: Omit<ConversationAICommand, "correlationId">
+  ): Promise<{ correlationId: strin
