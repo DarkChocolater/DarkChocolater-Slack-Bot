@@ -22,4 +22,9 @@ export class OpenAILambdaInvoke implements ConversationAIService {
     const result = await this.client.send(
       new InvokeCommand({
         FunctionName: OpenAILambdaInvoke.LAMBDA_ARN,
-        InvocationTy
+        InvocationType: InvocationType.Event,
+        Payload: Buffer.from(JSON.stringify(cmd), "utf-8"),
+      })
+    );
+
+    if (result.S
