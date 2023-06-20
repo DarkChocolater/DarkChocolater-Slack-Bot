@@ -19,4 +19,7 @@ export class OpenAILambdaInvoke implements ConversationAIService {
     const correlationId = crypto.randomUUID();
     const cmd = { ...input, correlationId };
 
-    const result = await this.client.se
+    const result = await this.client.send(
+      new InvokeCommand({
+        FunctionName: OpenAILambdaInvoke.LAMBDA_ARN,
+        InvocationTy
