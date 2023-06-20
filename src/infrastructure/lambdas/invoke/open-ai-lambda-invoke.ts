@@ -15,4 +15,8 @@ export class OpenAILambdaInvoke implements ConversationAIService {
 
   async trigger(
     input: Omit<ConversationAICommand, "correlationId">
-  ): Promise<{ correlationId: strin
+  ): Promise<{ correlationId: string }> {
+    const correlationId = crypto.randomUUID();
+    const cmd = { ...input, correlationId };
+
+    const result = await this.client.se
