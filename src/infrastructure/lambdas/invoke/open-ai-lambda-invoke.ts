@@ -27,4 +27,7 @@ export class OpenAILambdaInvoke implements ConversationAIService {
       })
     );
 
-    if (result.S
+    if (result.StatusCode !== 202) {
+      throw new Error(
+        `lambda returned unexpected status code '${result.StatusCode}'`
+      
