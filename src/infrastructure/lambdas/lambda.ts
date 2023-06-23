@@ -6,4 +6,5 @@ import {
 
 export type SQSEvent = Lambda.SQSEvent;
 
-abstract cl
+abstract class BaseLambda<TEvent = any, TResult = any> {
+  protected constructor(protected readonly baseProps: { lambdaNa
