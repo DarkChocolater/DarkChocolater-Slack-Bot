@@ -19,4 +19,10 @@ export abstract class AsyncLambda<TEvent = any> extends BaseLambda<
 
 type SlackEventDetailMapping = {
   [SlackEventType.MESSAGE]: {
-    detailType: "
+    detailType: "EventCallback.message";
+    detail: SlackMessageEventWithEnvelope;
+  };
+};
+
+export interface SlackEventBridgeEvent<
+  T ext
