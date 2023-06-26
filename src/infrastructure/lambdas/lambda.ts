@@ -7,4 +7,9 @@ import {
 export type SQSEvent = Lambda.SQSEvent;
 
 abstract class BaseLambda<TEvent = any, TResult = any> {
-  protected constructor(protected readonly baseProps: { lambdaNa
+  protected constructor(protected readonly baseProps: { lambdaName: string }) {}
+
+  abstract handle(event: TEvent, context: Lambda.Context): Promise<TResult>;
+}
+
+export abstract c
