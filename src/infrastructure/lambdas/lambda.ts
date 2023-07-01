@@ -35,4 +35,8 @@ export function isSlackEventTypeOf<T extends SlackEventType>(
   event: SlackEventBridgeEvent,
   type: T
 ): event is SlackEventBridgeEvent<T> {
-  return event["detail-
+  return event["detail-type"] === `EventCallback.${type}`;
+}
+
+export abstract class EventListenerLambda<
+  T extends Lambda.EventBridgeEvent<any, any> = Lamb
