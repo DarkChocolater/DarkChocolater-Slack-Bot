@@ -32,4 +32,7 @@ export interface SlackEventBridgeEvent<
   > {}
 
 export function isSlackEventTypeOf<T extends SlackEventType>(
-  e
+  event: SlackEventBridgeEvent,
+  type: T
+): event is SlackEventBridgeEvent<T> {
+  return event["detail-
