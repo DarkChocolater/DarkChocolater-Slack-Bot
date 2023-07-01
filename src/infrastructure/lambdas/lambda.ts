@@ -25,4 +25,6 @@ type SlackEventDetailMapping = {
 };
 
 export interface SlackEventBridgeEvent<
-  T ext
+  T extends SlackEventType = SlackEventType
+> extends Lambda.EventBridgeEvent<
+    SlackEventDetailMapping[T]["detai
