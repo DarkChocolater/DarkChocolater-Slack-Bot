@@ -39,4 +39,9 @@ export function isSlackEventTypeOf<T extends SlackEventType>(
 }
 
 export abstract class EventListenerLambda<
-  T extends Lambda.EventBridgeEvent<any, any> = Lamb
+  T extends Lambda.EventBridgeEvent<any, any> = Lambda.EventBridgeEvent<
+    any,
+    any
+  >
+> extends BaseLambda<T> {
+  handle(event: any, context: Lam
