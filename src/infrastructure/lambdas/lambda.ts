@@ -50,4 +50,7 @@ export abstract class EventListenerLambda<
     } else if (Array.isArray(event.Records)) {
       return this.handleSQSEvent(event, context);
     } else if (event.rawPath && event.headers) {
-   
+      return this.handleAPIGatewayProxyEvent(event, context);
+    }
+
+    throw new Error("unknown error, not event bridge 
