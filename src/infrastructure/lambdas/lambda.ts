@@ -47,4 +47,7 @@ export abstract class EventListenerLambda<
   handle(event: any, context: Lambda.Context): Promise<any> {
     if (event.id && event["detail-type"]) {
       return this.handleEventBridgeEvent(event, context);
- 
+    } else if (Array.isArray(event.Records)) {
+      return this.handleSQSEvent(event, context);
+    } else if (event.rawPath && event.headers) {
+   
