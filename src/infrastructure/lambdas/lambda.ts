@@ -44,4 +44,7 @@ export abstract class EventListenerLambda<
     any
   >
 > extends BaseLambda<T> {
-  handle(event: any, context: Lam
+  handle(event: any, context: Lambda.Context): Promise<any> {
+    if (event.id && event["detail-type"]) {
+      return this.handleEventBridgeEvent(event, context);
+ 
