@@ -53,4 +53,10 @@ export abstract class EventListenerLambda<
       return this.handleAPIGatewayProxyEvent(event, context);
     }
 
-    throw new Error("unknown error, not event bridge 
+    throw new Error("unknown error, not event bridge nor sqs event");
+  }
+
+  protected handleAPIGatewayProxyEvent(
+    _event: Lambda.APIGatewayProxyEventV2,
+    _context: Lambda.Context
+  )
