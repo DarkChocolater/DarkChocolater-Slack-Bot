@@ -59,4 +59,6 @@ export abstract class EventListenerLambda<
   protected handleAPIGatewayProxyEvent(
     _event: Lambda.APIGatewayProxyEventV2,
     _context: Lambda.Context
-  )
+  ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
+    throw new Error(
+      `Lambda '${this.baseProps.lamb
