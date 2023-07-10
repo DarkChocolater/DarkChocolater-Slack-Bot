@@ -61,4 +61,9 @@ export abstract class EventListenerLambda<
     _context: Lambda.Context
   ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
     throw new Error(
-      `Lambda '${this.baseProps.lamb
+      `Lambda '${this.baseProps.lambdaName}' did not override #handleAPIGatewayProxyEvent()`
+    );
+  }
+
+  protected handleEventBridgeEvent(
+   
