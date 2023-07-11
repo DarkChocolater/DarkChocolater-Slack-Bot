@@ -77,3 +77,6 @@ export abstract class EventListenerLambda<
   protected handleSQSEvent(
     _event: SQSEvent,
     _context: Lambda.Context
+  ): Promise<Lambda.SQSBatchResponse | void> {
+    throw new Error(
+      `Lambda '${this.baseProps.lambdaN
