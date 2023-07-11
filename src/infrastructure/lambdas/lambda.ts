@@ -66,4 +66,8 @@ export abstract class EventListenerLambda<
   }
 
   protected handleEventBridgeEvent(
-   
+    _event: T,
+    _context: Lambda.Context
+  ): Promise<void> {
+    throw new Error(
+      `Lambda '${this.baseProps.lambdaName}' did not
