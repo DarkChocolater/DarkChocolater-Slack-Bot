@@ -70,4 +70,10 @@ export abstract class EventListenerLambda<
     _context: Lambda.Context
   ): Promise<void> {
     throw new Error(
-      `Lambda '${this.baseProps.lambdaName}' did not
+      `Lambda '${this.baseProps.lambdaName}' did not override #handleEventBridgeEvent()`
+    );
+  }
+
+  protected handleSQSEvent(
+    _event: SQSEvent,
+    _context: Lambda.Context
