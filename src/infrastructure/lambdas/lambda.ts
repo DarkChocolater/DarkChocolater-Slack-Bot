@@ -79,4 +79,10 @@ export abstract class EventListenerLambda<
     _context: Lambda.Context
   ): Promise<Lambda.SQSBatchResponse | void> {
     throw new Error(
-      `Lambda '${this.baseProps.lambdaN
+      `Lambda '${this.baseProps.lambdaName}' did not override #handleSQSEvent()`
+    );
+  }
+}
+
+export const createHandler =
+  (lambda: BaseLambda): Lambda.Hand
