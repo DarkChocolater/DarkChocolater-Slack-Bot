@@ -85,4 +85,6 @@ export abstract class EventListenerLambda<
 }
 
 export const createHandler =
-  (lambda: BaseLambda): Lambda.Hand
+  (lambda: BaseLambda): Lambda.Handler =>
+  (event, context) =>
+    lambda.handle(event, context);
