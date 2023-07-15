@@ -4,4 +4,6 @@ import { ConversationAICommand } from "../../domain/conversation/ai/conversation
 
 class OpenAILambda extends AsyncLambda<ConversationAICommand> {
   constructor(
-    private rea
+    private readonly openAICommandHandler: OpenAICommandHandler = new OpenAICommandHandler()
+  ) {
+    super({ lambdaName: "OpenAILambda"
