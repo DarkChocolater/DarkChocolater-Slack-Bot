@@ -6,4 +6,9 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
   constructor(
     private readonly openAICommandHandler: OpenAICommandHandler = new OpenAICommandHandler()
   ) {
-    super({ lambdaName: "OpenAILambda"
+    super({ lambdaName: "OpenAILambda" });
+  }
+
+  async handle(cmd: ConversationAICommand): Promise<void> {
+    try {
+      // TODO: make debug logging better and coun
