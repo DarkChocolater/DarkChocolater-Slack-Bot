@@ -11,4 +11,8 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
 
   async handle(cmd: ConversationAICommand): Promise<void> {
     try {
-      // TODO: make debug logging better and coun
+      // TODO: make debug logging better and count usage with proper metrics
+      console.log(
+        JSON.stringify({
+          cmd: {
+            conversation: 
