@@ -15,4 +15,6 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
       console.log(
         JSON.stringify({
           cmd: {
-            conversation: 
+            conversation: {
+              summarySize: cmd.conversation.summary?.length,
+              messagesCount: cmd.conversat
