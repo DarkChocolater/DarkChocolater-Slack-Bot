@@ -31,4 +31,11 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
           ...this.baseProps,
           method: "handle",
           // TODO: add better logger
-          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(
+          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
+        })
+      );
+    }
+  }
+}
+
+export const handler = createHandler(new OpenAILambda());
