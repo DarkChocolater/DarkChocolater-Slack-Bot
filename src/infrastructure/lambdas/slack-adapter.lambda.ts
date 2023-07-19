@@ -7,4 +7,5 @@ import {
   SQSEvent,
 } from "./lambda";
 import { ConversationEventHandler } from "../../application/slack-adapter/conversation-event-handler";
-import {
+import { SlackEventHandler } from "../../application/slack-adapter/slack-event-handler";
+import { SlackOAuthHandler } from "../../a
