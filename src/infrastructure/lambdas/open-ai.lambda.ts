@@ -24,4 +24,8 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
       );
 
       await this.openAICommandHandler.handle(cmd);
-    
+    } catch (err: any) {
+      // TODO: add better error handling, DLQ etc.
+      console.error(
+        JSON.stringify({
+          ...this.baseP
