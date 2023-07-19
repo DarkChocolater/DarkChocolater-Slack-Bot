@@ -5,4 +5,6 @@ import {
   isSlackEventTypeOf,
   SlackEventBridgeEvent,
   SQSEvent,
-} from "./la
+} from "./lambda";
+import { ConversationEventHandler } from "../../application/slack-adapter/conversation-event-handler";
+import {
