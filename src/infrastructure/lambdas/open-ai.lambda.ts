@@ -17,4 +17,11 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
           cmd: {
             conversation: {
               summarySize: cmd.conversation.summary?.length,
-              messagesCount: cmd.conversat
+              messagesCount: cmd.conversation.messages.length,
+            },
+          },
+        })
+      );
+
+      await this.openAICommandHandler.handle(cmd);
+    
