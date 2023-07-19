@@ -28,4 +28,7 @@ class OpenAILambda extends AsyncLambda<ConversationAICommand> {
       // TODO: add better error handling, DLQ etc.
       console.error(
         JSON.stringify({
-          ...this.baseP
+          ...this.baseProps,
+          method: "handle",
+          // TODO: add better logger
+          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(
