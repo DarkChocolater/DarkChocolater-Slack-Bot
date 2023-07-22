@@ -31,4 +31,7 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
       console.error(
         JSON.stringify({
           ...this.baseProps,
-          method: "handleAPIGatewayProxy
+          method: "handleAPIGatewayProxyEvent",
+          // TODO: add better logger
+          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
+ 
