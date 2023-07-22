@@ -24,4 +24,7 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
   protected handleAPIGatewayProxyEvent(
     event: Lambda.APIGatewayProxyEventV2
   ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
-    t
+    try {
+      return this.slackOAuthHandler.handle(event);
+    } catch (err) {
+      // TODO: add better error handling, DLQ
