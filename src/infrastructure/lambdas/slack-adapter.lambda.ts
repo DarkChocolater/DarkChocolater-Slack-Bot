@@ -16,4 +16,9 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
   constructor(
     private readonly slackEventHandler: SlackEventHandler = new SlackEventHandler(),
     private readonly slackOAuthHandler: SlackOAuthHandler = new SlackOAuthHandler(),
-    private readonly conversationEventHandler: ConversationEventHandler = new Conversati
+    private readonly conversationEventHandler: ConversationEventHandler = new ConversationEventHandler()
+  ) {
+    super({ lambdaName: "SlackAdapterLambda" });
+  }
+
+  protected handleAPIGatewayPro
