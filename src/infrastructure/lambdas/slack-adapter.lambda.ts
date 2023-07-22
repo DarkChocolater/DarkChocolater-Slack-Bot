@@ -34,4 +34,12 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
           method: "handleAPIGatewayProxyEvent",
           // TODO: add better logger
           err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
- 
+        })
+      );
+
+      throw err;
+    }
+  }
+
+  protected async handleEventBridgeEvent(
+    event: SlackEventBridgeEven
