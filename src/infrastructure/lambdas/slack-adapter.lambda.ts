@@ -21,4 +21,7 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
     super({ lambdaName: "SlackAdapterLambda" });
   }
 
-  protected handleAPIGatewayPro
+  protected handleAPIGatewayProxyEvent(
+    event: Lambda.APIGatewayProxyEventV2
+  ): Promise<Lambda.APIGatewayProxyStructuredResultV2> {
+    t
