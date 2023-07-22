@@ -27,4 +27,8 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
     try {
       return this.slackOAuthHandler.handle(event);
     } catch (err) {
-      // TODO: add better error handling, DLQ
+      // TODO: add better error handling, DLQ etc.
+      console.error(
+        JSON.stringify({
+          ...this.baseProps,
+          method: "handleAPIGatewayProxy
