@@ -42,4 +42,8 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
   }
 
   protected async handleEventBridgeEvent(
-    event: SlackEventBridgeEven
+    event: SlackEventBridgeEvent
+  ): Promise<void> {
+    try {
+      if (isSlackEventTypeOf(event, SlackEventType.MESSAGE)) {
+        await this.slackEventHa
