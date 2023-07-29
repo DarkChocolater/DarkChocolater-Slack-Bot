@@ -48,4 +48,10 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
       if (isSlackEventTypeOf(event, SlackEventType.MESSAGE)) {
         await this.slackEventHandler.handleSlackMessageEvent(event.detail);
       } else {
-        console.log("unknown type of event
+        console.log("unknown type of event");
+      }
+    } catch (err) {
+      // TODO: add better error handling, DLQ etc.
+      console.error(
+        JSON.stringify({
+          ...th
