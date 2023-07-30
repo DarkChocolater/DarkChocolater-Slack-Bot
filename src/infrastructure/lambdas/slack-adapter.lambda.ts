@@ -54,4 +54,7 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
       // TODO: add better error handling, DLQ etc.
       console.error(
         JSON.stringify({
-          ...th
+          ...this.baseProps,
+          method: "handleEventBridgeEvent",
+          // TODO: add better logger
+          err: JSON.parse(JSO
