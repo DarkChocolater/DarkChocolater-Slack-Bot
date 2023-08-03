@@ -57,4 +57,10 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
           ...this.baseProps,
           method: "handleEventBridgeEvent",
           // TODO: add better logger
-          err: JSON.parse(JSO
+          err: JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))),
+        })
+      );
+    }
+  }
+
+  protected async handleSQSEvent({ Records }:
