@@ -82,4 +82,4 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
   }
 }
 
-export const 
+export const handler = createHandler(new SlackAdapterLambda());
