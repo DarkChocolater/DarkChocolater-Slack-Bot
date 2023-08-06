@@ -67,4 +67,8 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
     try {
       const event: DomainEvent = JSON.parse(Records[0].body);
 
-      await this.conversationEventHandler.handle(event
+      await this.conversationEventHandler.handle(event);
+    } catch (err) {
+      // TODO: add better error handling, DLQ etc.
+      console.error(
+        JSON.stringif
