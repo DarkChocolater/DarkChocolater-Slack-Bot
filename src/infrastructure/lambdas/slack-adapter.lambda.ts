@@ -63,4 +63,8 @@ class SlackAdapterLambda extends EventListenerLambda<SlackEventBridgeEvent> {
     }
   }
 
-  protected async handleSQSEvent({ Records }:
+  protected async handleSQSEvent({ Records }: SQSEvent) {
+    try {
+      const event: DomainEvent = JSON.parse(Records[0].body);
+
+      await this.conversationEventHandler.handle(event
