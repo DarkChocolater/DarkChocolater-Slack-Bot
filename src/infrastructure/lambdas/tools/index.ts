@@ -10,4 +10,6 @@ export class Tools {
     this.instance = new Tools(requestContext);
   }
 
-  
+  /**
+   * `Index.getInstance` only supposed to be used in Lambda deployments
+   * using it in other types of developments could cause uninte
