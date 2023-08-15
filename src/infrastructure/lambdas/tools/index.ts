@@ -19,4 +19,11 @@ export class Tools {
   static getInstance(): Tools {
     if (this.instance === undefined) {
       throw new Error(
-   
+        "Index.getInstance called before Lambda had to chance to initialize an instance"
+      );
+    }
+
+    return this.instance;
+  }
+
+  private static ins
