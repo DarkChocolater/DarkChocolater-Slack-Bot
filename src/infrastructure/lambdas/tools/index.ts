@@ -26,4 +26,7 @@ export class Tools {
     return this.instance;
   }
 
-  private static ins
+  private static instance: Tools | undefined;
+
+  private constructor(_requestContext: RequestContext) {}
+}
