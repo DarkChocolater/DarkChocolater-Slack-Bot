@@ -4,4 +4,8 @@ import { OpenAiSecretsService } from "../secrets/open-ai-secrets.service";
 
 export class ConversationPromptServiceFactory {
   private cache:
-    | { apiKey: string; 
+    | { apiKey: string; service: ConversationPromptService }
+    | undefined = undefined;
+
+  constructor(
+    private readonly openAiSecretsService
