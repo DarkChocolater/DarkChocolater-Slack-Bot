@@ -8,4 +8,8 @@ export class ConversationPromptServiceFactory {
     | undefined = undefined;
 
   constructor(
-    private readonly openAiSecretsService
+    private readonly openAiSecretsService = new OpenAiSecretsService()
+  ) {}
+
+  async createWithCache(): Promise<ConversationPromptService> {
+    const { apiKey } = await th
