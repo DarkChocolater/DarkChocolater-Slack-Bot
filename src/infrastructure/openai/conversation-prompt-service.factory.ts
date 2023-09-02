@@ -12,4 +12,10 @@ export class ConversationPromptServiceFactory {
   ) {}
 
   async createWithCache(): Promise<ConversationPromptService> {
-    const { apiKey } = await th
+    const { apiKey } = await this.openAiSecretsService.retrieve();
+
+    if (this.cache?.apiKey === apiKey) {
+      return this.cache.service;
+    }
+
+    const api = new O
