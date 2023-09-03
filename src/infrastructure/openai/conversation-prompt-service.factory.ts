@@ -21,4 +21,8 @@ export class ConversationPromptServiceFactory {
     const api = new OpenAIApi(new Configuration({ apiKey }));
     const service = new ConversationPromptService(api);
 
-    this.cac
+    this.cache = { apiKey, service };
+
+    return service;
+  }
+}
