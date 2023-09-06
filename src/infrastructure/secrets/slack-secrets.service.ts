@@ -8,4 +8,6 @@ type AppSecrets = {
   clientSecret?: string;
 };
 
-export class S
+export class SlackSecretsService {
+  private static readonly SLACK_SECRET_ARN = getEnv("SLACK_SECRET_ARN");
+  private static readonly APP_SE
