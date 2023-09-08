@@ -17,4 +17,8 @@ export class SlackSecretsService {
   private static getFieldNameBySecretName(
     secretName: string
   ): keyof AppSecrets {
-    switch (s
+    switch (secretName) {
+      case "token":
+        return "token";
+      case "client-id":
+        return "clientId
