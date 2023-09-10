@@ -25,4 +25,13 @@ export class SlackSecretsService {
       case "client-secret":
         return "clientSecret";
       default:
-        throw new Error("unknown secret 
+        throw new Error("unknown secret name");
+    }
+  }
+
+  private cache:
+    | { promise: Promise<Record<AppId, AppSecrets>>; time: number }
+    | undefined;
+
+  constructor(
+   
