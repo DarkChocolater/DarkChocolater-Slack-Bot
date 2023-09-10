@@ -34,4 +34,7 @@ export class SlackSecretsService {
     | undefined;
 
   constructor(
-   
+    private readonly secretsManagerAdapter = new SecretsManagerAdapter(
+      SlackSecretsService.SLACK_SECRET_ARN
+    )
+  )
