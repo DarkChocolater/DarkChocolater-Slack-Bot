@@ -21,4 +21,8 @@ export class SlackSecretsService {
       case "token":
         return "token";
       case "client-id":
-        return "clientId
+        return "clientId";
+      case "client-secret":
+        return "clientSecret";
+      default:
+        throw new Error("unknown secret 
