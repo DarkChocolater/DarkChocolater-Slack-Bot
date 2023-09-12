@@ -46,4 +46,9 @@ export class SlackSecretsService {
       // cache not expired
       Date.now() - this.cache.time < SlackSecretsService.SLACK_SECRET_TTL
     ) {
-      return 
+      return this.cache.promise;
+    }
+
+    this.cache = { promise: this.retrieveAndParseSecret(), time: currentTime };
+
+    
