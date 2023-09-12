@@ -37,4 +37,10 @@ export class SlackSecretsService {
     private readonly secretsManagerAdapter = new SecretsManagerAdapter(
       SlackSecretsService.SLACK_SECRET_ARN
     )
-  )
+  ) {}
+
+  async retrieve(): Promise<Record<AppId, AppSecrets>> {
+    const currentTime = Date.now();
+    if (
+      this.cache &&
+ 
