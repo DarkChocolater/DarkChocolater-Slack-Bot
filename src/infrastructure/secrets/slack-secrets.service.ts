@@ -43,4 +43,7 @@ export class SlackSecretsService {
     const currentTime = Date.now();
     if (
       this.cache &&
- 
+      // cache not expired
+      Date.now() - this.cache.time < SlackSecretsService.SLACK_SECRET_TTL
+    ) {
+      return 
