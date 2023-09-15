@@ -51,4 +51,8 @@ export class SlackSecretsService {
 
     this.cache = { promise: this.retrieveAndParseSecret(), time: currentTime };
 
-    
+    return this.cache.promise;
+  }
+
+  private async retrieveAndParseSecret() {
+    const secretObject = await this.s
