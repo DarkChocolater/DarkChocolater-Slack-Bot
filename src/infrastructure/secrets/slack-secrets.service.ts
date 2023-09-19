@@ -55,4 +55,8 @@ export class SlackSecretsService {
   }
 
   private async retrieveAndParseSecret() {
-    const secretObject = await this.s
+    const secretObject = await this.secretsManagerAdapter.retrieve();
+
+    return Object.entries(secretObject).reduce<Record<AppId, AppSecrets>>(
+      (curr, [key, value]) => {
+ 
