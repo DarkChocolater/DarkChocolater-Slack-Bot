@@ -59,4 +59,7 @@ export class SlackSecretsService {
 
     return Object.entries(secretObject).reduce<Record<AppId, AppSecrets>>(
       (curr, [key, value]) => {
- 
+        const match = SlackSecretsService.APP_SECRET_REGEX.exec(key);
+
+        if (match && match.groups) {
+          const {
