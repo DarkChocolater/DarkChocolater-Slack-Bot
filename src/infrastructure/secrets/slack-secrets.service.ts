@@ -62,4 +62,8 @@ export class SlackSecretsService {
         const match = SlackSecretsService.APP_SECRET_REGEX.exec(key);
 
         if (match && match.groups) {
-          const {
+          const { appId, secretName } = match.groups;
+
+          curr[appId] = {
+            ...curr[appId],
+            [SlackSecretsService.g
