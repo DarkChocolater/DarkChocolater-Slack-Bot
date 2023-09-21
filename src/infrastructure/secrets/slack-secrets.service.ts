@@ -66,4 +66,15 @@ export class SlackSecretsService {
 
           curr[appId] = {
             ...curr[appId],
-            [SlackSecretsService.g
+            [SlackSecretsService.getFieldNameBySecretName(secretName)]: value,
+          };
+        }
+
+        return curr;
+      },
+      {}
+    );
+  }
+}
+
+const defaul
