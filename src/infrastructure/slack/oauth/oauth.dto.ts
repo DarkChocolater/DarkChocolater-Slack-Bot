@@ -1,2 +1,9 @@
 export type TeamAccess = {
-  appId
+  appId: string;
+  teamId: string;
+  accessToken: string | null;
+  authedUsers: Set<string>;
+  scopes: Set<string>;
+};
+
+export type UserAccess = {
