@@ -77,4 +77,6 @@ export class SlackSecretsService {
   }
 }
 
-const defaul
+const defaultSlackSecretsService = new SlackSecretsService();
+
+export default defaultSlackSecretsService;
