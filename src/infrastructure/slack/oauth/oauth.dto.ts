@@ -7,3 +7,11 @@ export type TeamAccess = {
 };
 
 export type UserAccess = {
+  appId: string;
+  teamId: string;
+  userId: string;
+  accessToken: string | null;
+  scopes: Set<string>;
+};
+
+export type O
