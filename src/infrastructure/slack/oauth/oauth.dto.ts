@@ -14,4 +14,10 @@ export type UserAccess = {
   scopes: Set<string>;
 };
 
-export type O
+export type OAuthV2AccessResponse =
+  | { ok: false; error: string }
+  | {
+      ok: true;
+      app_id: string;
+      authed_user: {
+    
