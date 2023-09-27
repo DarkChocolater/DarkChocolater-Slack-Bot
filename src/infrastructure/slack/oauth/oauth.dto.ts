@@ -20,4 +20,8 @@ export type OAuthV2AccessResponse =
       ok: true;
       app_id: string;
       authed_user: {
-    
+        id: string;
+        scope?: string;
+        access_token?: string;
+        token_type?: string;
+      };
