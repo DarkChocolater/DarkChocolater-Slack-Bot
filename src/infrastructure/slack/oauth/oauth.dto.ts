@@ -51,4 +51,10 @@ export type OAuthV2AccessOutput = {
   authedUser: {
     id: string;
     scopes: string[];
-    accessTok
+    accessToken?: string;
+    tokenType?: string;
+  };
+  scopes: string[];
+  tokenType?: string;
+  accessToken?: string;
+  botUserId: st
