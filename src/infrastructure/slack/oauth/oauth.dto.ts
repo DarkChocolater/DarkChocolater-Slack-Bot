@@ -25,3 +25,9 @@ export type OAuthV2AccessResponse =
         access_token?: string;
         token_type?: string;
       };
+      scope?: string;
+      token_type?: string;
+      access_token?: string;
+      bot_user_id: string;
+      team: {
+        id: 
