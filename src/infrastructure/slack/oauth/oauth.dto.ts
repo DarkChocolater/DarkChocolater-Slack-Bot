@@ -43,4 +43,12 @@ export type OAuthV2AccessResponse =
 export type OAuthV2AccessInput = {
   clientId: string;
   clientSecret: string;
-  code: string
+  code: string;
+};
+
+export type OAuthV2AccessOutput = {
+  appId: string;
+  authedUser: {
+    id: string;
+    scopes: string[];
+    accessTok
