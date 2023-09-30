@@ -37,4 +37,10 @@ export type OAuthV2AccessResponse =
         id: string;
         name: string;
       };
-   
+      is_enterprise_install: boolean;
+    };
+
+export type OAuthV2AccessInput = {
+  clientId: string;
+  clientSecret: string;
+  code: string
