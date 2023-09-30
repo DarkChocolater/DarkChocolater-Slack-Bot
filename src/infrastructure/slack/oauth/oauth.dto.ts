@@ -30,4 +30,11 @@ export type OAuthV2AccessResponse =
       access_token?: string;
       bot_user_id: string;
       team: {
-        id: 
+        id: string;
+        name: string;
+      };
+      enterprise: null | {
+        id: string;
+        name: string;
+      };
+   
