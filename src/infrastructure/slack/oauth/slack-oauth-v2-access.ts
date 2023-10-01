@@ -4,4 +4,10 @@ import {
   OAuthV2AccessResponse,
 } from "./oauth.dto";
 
-const OAUTH_V2_ACCESS_URL = "htt
+const OAUTH_V2_ACCESS_URL = "https://slack.com/api/oauth.v2.access";
+
+export async function slackOAuthV2Access({
+  clientId,
+  clientSecret,
+  code,
+}: OAu
