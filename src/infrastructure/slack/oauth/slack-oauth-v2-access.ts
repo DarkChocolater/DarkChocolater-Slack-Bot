@@ -21,4 +21,9 @@ export async function slackOAuthV2Access({
     body: form,
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-    
+    },
+  });
+
+  if (response.status !== 200) {
+    throw new Error(
+      `unexpected status code '${response.status}' returned from Slack oA
