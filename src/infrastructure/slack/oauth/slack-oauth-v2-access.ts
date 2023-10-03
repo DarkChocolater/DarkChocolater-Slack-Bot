@@ -12,4 +12,8 @@ export async function slackOAuthV2Access({
   code,
 }: OAuthV2AccessInput): Promise<OAuthV2AccessOutput> {
   const form = new URLSearchParams();
-  form.append("client_id", 
+  form.append("client_id", clientId);
+  form.append("client_secret", clientSecret);
+  form.append("code", code);
+
+  const response = await fetch(OAUTH_V2_AC
