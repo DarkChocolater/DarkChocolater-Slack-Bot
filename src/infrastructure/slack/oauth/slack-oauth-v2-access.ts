@@ -16,4 +16,9 @@ export async function slackOAuthV2Access({
   form.append("client_secret", clientSecret);
   form.append("code", code);
 
-  const response = await fetch(OAUTH_V2_AC
+  const response = await fetch(OAUTH_V2_ACCESS_URL, {
+    method: "POST",
+    body: form,
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+    
