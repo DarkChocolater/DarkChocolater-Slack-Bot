@@ -26,4 +26,11 @@ export async function slackOAuthV2Access({
 
   if (response.status !== 200) {
     throw new Error(
-      `unexpected status code '${response.status}' returned from Slack oA
+      `unexpected status code '${response.status}' returned from Slack oAuth`
+    );
+  }
+
+  const data: OAuthV2AccessResponse = (await response.json()) as any;
+
+  if (!data.ok) {
+    throw new Error(`u
