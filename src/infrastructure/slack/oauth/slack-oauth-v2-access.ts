@@ -33,4 +33,9 @@ export async function slackOAuthV2Access({
   const data: OAuthV2AccessResponse = (await response.json()) as any;
 
   if (!data.ok) {
-    throw new Error(`u
+    throw new Error(`unexpected error happened with error: '${data.error}'`);
+  }
+
+  return {
+    appId: data.app_id,
+    authedU
