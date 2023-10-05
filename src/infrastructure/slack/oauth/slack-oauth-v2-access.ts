@@ -38,4 +38,7 @@ export async function slackOAuthV2Access({
 
   return {
     appId: data.app_id,
-    authedU
+    authedUser: {
+      id: data.authed_user.id,
+      scopes: data.authed_user.scope?.split(",") || [],
+     
