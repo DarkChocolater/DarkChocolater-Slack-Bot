@@ -49,4 +49,8 @@ export async function slackOAuthV2Access({
     accessToken: data.access_token,
     botUserId: data.bot_user_id,
     team: {
-      id
+      id: data.team.id,
+      name: data.team.name,
+    },
+  };
+}
