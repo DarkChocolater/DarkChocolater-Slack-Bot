@@ -7,4 +7,10 @@ type CreateMessageOutput = Required<
 >;
 
 type UpdateMessageOutput = Required<
-  Pick<ChatUpdat
+  Pick<ChatUpdateArguments, "text" | "blocks">
+>;
+
+type UpdateWithResponseOutput = UpdateMessageOutput;
+
+export class SlackMessageHelpers {
+  static cr
