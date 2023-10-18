@@ -13,4 +13,6 @@ type UpdateMessageOutput = Required<
 type UpdateWithResponseOutput = UpdateMessageOutput;
 
 export class SlackMessageHelpers {
-  static cr
+  static createInitialMessage(): CreateMessageOutput {
+    const LOADING_TEXT =
+      ":hourglass_flowing_sand: hold on for a f
