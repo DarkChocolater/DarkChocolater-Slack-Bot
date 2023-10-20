@@ -15,4 +15,12 @@ type UpdateWithResponseOutput = UpdateMessageOutput;
 export class SlackMessageHelpers {
   static createInitialMessage(): CreateMessageOutput {
     const LOADING_TEXT =
-      ":hourglass_flowing_sand: hold on for a f
+      ":hourglass_flowing_sand: hold on for a few seconds...";
+
+    return {
+      text: LOADING_TEXT,
+      blocks: [
+        {
+          type: "section",
+          fields: [
+            {
