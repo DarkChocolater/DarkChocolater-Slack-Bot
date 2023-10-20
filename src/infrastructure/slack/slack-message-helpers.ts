@@ -24,3 +24,9 @@ export class SlackMessageHelpers {
           type: "section",
           fields: [
             {
+              type: "mrkdwn",
+              text: LOADING_TEXT,
+            },
+          ],
+        },
+ 
