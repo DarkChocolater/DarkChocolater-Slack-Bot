@@ -38,4 +38,9 @@ export class SlackMessageHelpers {
     botUserId,
   }: {
     markdownBody: string;
-    botUserId: stri
+    botUserId: string;
+  }): UpdateWithResponseOutput {
+    const text = prepareForSlack({ text: markdownBody, botUserId });
+
+    return {
+      text,
