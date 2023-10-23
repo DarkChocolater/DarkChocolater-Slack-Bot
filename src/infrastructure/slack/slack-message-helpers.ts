@@ -29,4 +29,13 @@ export class SlackMessageHelpers {
             },
           ],
         },
- 
+      ],
+    };
+  }
+
+  static updateWithResponse({
+    markdownBody,
+    botUserId,
+  }: {
+    markdownBody: string;
+    botUserId: stri
