@@ -44,3 +44,10 @@ export class SlackMessageHelpers {
 
     return {
       text,
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text,
+          }
