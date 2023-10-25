@@ -73,4 +73,11 @@ export class SlackMessageHelpers {
         //       value: "click_me_1234",
         //     },
         //   ],
-        
+        // },
+      ],
+    };
+  }
+
+  static precedeMessage(
+    previousMessage: UpdateWithResponseOutput
+  ): UpdateMessageOut
