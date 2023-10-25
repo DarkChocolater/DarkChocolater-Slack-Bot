@@ -80,4 +80,7 @@ export class SlackMessageHelpers {
 
   static precedeMessage(
     previousMessage: UpdateWithResponseOutput
-  ): UpdateMessageOut
+  ): UpdateMessageOutput {
+    return {
+      text: previousMessage.text,
+      blocks: previousMessage.blocks.filter(({ type }) => type !== 
