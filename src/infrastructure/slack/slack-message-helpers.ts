@@ -60,4 +60,7 @@ export class SlackMessageHelpers {
         //       type: "button",
         //       text: {
         //         type: "plain_text",
-        //         
+        //         text: "Re-generate",
+        //       },
+        //       value: "click_me_123",
+        //     
