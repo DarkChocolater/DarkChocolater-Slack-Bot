@@ -50,4 +50,10 @@ export class SlackMessageHelpers {
           text: {
             type: "mrkdwn",
             text,
-          }
+          },
+        },
+        // TODO: enable actions
+        // {
+        //   type: "actions",
+        //   elements: [
+        //
