@@ -68,4 +68,9 @@ export class SlackMessageHelpers {
         //       type: "button",
         //       text: {
         //         type: "plain_text",
-        //         t
+        //         text: "End Conversation",
+        //       },
+        //       value: "click_me_1234",
+        //     },
+        //   ],
+        
