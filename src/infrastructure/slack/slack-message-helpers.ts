@@ -83,4 +83,10 @@ export class SlackMessageHelpers {
   ): UpdateMessageOutput {
     return {
       text: previousMessage.text,
-      blocks: previousMessage.blocks.filter(({ type }) => type !== 
+      blocks: previousMessage.blocks.filter(({ type }) => type !== "actions"),
+    };
+  }
+
+  static createConversationEndedMessage(
+    event: ConversationEnded
+  ): CreateMessageOut
