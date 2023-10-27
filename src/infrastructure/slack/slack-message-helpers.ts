@@ -100,4 +100,11 @@ export class SlackMessageHelpers {
           fields: [
             {
               type: "mrkdwn",
-   
+              text: FINISHED_TEXT,
+            },
+          ],
+        },
+      ],
+    };
+  }
+}
