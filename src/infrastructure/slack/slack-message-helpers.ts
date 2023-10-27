@@ -89,4 +89,8 @@ export class SlackMessageHelpers {
 
   static createConversationEndedMessage(
     event: ConversationEnded
-  ): CreateMessageOut
+  ): CreateMessageOutput {
+    const FINISHED_TEXT = `:checkered_flag: conversation ended with reason: ${event.reason.type}`;
+
+    return {
+      text: FIN
