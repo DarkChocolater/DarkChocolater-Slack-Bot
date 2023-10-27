@@ -93,4 +93,11 @@ export class SlackMessageHelpers {
     const FINISHED_TEXT = `:checkered_flag: conversation ended with reason: ${event.reason.type}`;
 
     return {
-      text: FIN
+      text: FINISHED_TEXT,
+      blocks: [
+        {
+          type: "section",
+          fields: [
+            {
+              type: "mrkdwn",
+   
