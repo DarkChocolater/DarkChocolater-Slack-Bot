@@ -7,3 +7,8 @@ import defaultSlackSecretsService, {
 
 function assertSlackAuthTypeUnreachable(value: never): never {
   throw new Error(`unknown type of slack auth type: '${value}'`);
+}
+
+export class SlackWebClientFactory {
+  private static readonly SLACK_APP_ID = config.slack.appId;
+  private static readonly SLACK
