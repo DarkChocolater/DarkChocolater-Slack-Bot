@@ -11,4 +11,7 @@ function assertSlackAuthTypeUnreachable(value: never): never {
 
 export class SlackWebClientFactory {
   private static readonly SLACK_APP_ID = config.slack.appId;
-  private static readonly SLACK
+  private static readonly SLACK_AUTH_TYPE = config.slack.authType;
+
+  constructor(
+    private readonly slackSecretService: SlackSecrets
