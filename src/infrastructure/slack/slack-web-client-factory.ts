@@ -14,4 +14,5 @@ export class SlackWebClientFactory {
   private static readonly SLACK_AUTH_TYPE = config.slack.authType;
 
   constructor(
-    private readonly slackSecretService: SlackSecrets
+    private readonly slackSecretService: SlackSecretsService = defaultSlackSecretsService,
+    private readonly slackOAuthReaderRepository: SlackOAuthReaderRepository = new Sla
