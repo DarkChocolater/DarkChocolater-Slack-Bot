@@ -15,4 +15,8 @@ export class SlackWebClientFactory {
 
   constructor(
     private readonly slackSecretService: SlackSecretsService = defaultSlackSecretsService,
-    private readonly slackOAuthReaderRepository: SlackOAuthReaderRepository = new Sla
+    private readonly slackOAuthReaderRepository: SlackOAuthReaderRepository = new SlackOAuthReaderRepository()
+  ) {}
+
+  async create({ teamId }: { teamId: string }): Promise<WebClient> {
+    switch (Sla
