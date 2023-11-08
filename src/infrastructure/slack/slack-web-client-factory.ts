@@ -19,4 +19,7 @@ export class SlackWebClientFactory {
   ) {}
 
   async create({ teamId }: { teamId: string }): Promise<WebClient> {
-    switch (Sla
+    switch (SlackWebClientFactory.SLACK_AUTH_TYPE) {
+      case "TOKEN_BASED":
+        return this.createTokenBasedWebClient();
+      case "O
