@@ -25,4 +25,10 @@ export class SlackWebClientFactory {
       case "OAUTH_BASED":
         return this.createOAuthBasedWebClient({ teamId });
       default:
-        return assertSlackAuthType
+        return assertSlackAuthTypeUnreachable(
+          SlackWebClientFactory.SLACK_AUTH_TYPE
+        );
+    }
+  }
+
+  private async createToken
