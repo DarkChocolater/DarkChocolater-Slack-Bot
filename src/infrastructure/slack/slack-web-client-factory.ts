@@ -22,4 +22,7 @@ export class SlackWebClientFactory {
     switch (SlackWebClientFactory.SLACK_AUTH_TYPE) {
       case "TOKEN_BASED":
         return this.createTokenBasedWebClient();
-      case "O
+      case "OAUTH_BASED":
+        return this.createOAuthBasedWebClient({ teamId });
+      default:
+        return assertSlackAuthType
