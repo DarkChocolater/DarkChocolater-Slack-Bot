@@ -31,4 +31,7 @@ export class SlackWebClientFactory {
     }
   }
 
-  private async createToken
+  private async createTokenBasedWebClient(): Promise<WebClient> {
+    const secrets = await this.slackSecretService.retrieve();
+
+    if 
