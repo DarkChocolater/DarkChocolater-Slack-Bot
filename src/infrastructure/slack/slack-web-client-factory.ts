@@ -42,4 +42,11 @@ export class SlackWebClientFactory {
 
     const { token } = secrets[SlackWebClientFactory.SLACK_APP_ID];
 
-    return ne
+    return new WebClient(token);
+  }
+
+  private async createOAuthBasedWebClient({
+    teamId,
+  }: {
+    teamId: string;
+  }): Promise<WebCli
