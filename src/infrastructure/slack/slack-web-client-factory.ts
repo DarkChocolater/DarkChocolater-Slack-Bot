@@ -34,4 +34,6 @@ export class SlackWebClientFactory {
   private async createTokenBasedWebClient(): Promise<WebClient> {
     const secrets = await this.slackSecretService.retrieve();
 
-    if 
+    if (!secrets[SlackWebClientFactory.SLACK_APP_ID]) {
+      throw new Error(
+        `could not find secrets for appId '${Sla
