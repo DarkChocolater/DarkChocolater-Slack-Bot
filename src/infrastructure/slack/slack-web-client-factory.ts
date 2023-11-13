@@ -36,4 +36,10 @@ export class SlackWebClientFactory {
 
     if (!secrets[SlackWebClientFactory.SLACK_APP_ID]) {
       throw new Error(
-        `could not find secrets for appId '${Sla
+        `could not find secrets for appId '${SlackWebClientFactory.SLACK_APP_ID}'`
+      );
+    }
+
+    const { token } = secrets[SlackWebClientFactory.SLACK_APP_ID];
+
+    return ne
