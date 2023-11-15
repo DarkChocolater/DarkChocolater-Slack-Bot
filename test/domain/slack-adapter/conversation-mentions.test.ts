@@ -26,3 +26,11 @@ describe("mentions", () => {
       const input = {
         text: `hey ${ASSISTANT_MENTION}! how is it going? '${ASSISTANT_MENTION}'`,
         botUserId,
+      };
+
+      expect(prepareForSlack(input)).toMatchInlineSnapshot(
+        `"hey <@U01>! how is it going? '<@U01>'"`
+      );
+    });
+  });
+});
