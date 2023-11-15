@@ -65,4 +65,12 @@ export class SlackWebClientFactory {
 
     if (!accessToken) {
       throw new Error(
-        `the team '${teamId}' installed the application but there is no access token
+        `the team '${teamId}' installed the application but there is no access token. oauth possibly misconfigured`
+      );
+    }
+
+    return new WebClient(accessToken);
+  }
+}
+
+const defaultSlackWebClient
