@@ -73,4 +73,6 @@ export class SlackWebClientFactory {
   }
 }
 
-const defaultSlackWebClient
+const defaultSlackWebClientFactory = new SlackWebClientFactory();
+
+export default defaultSlackWebClientFactory;
