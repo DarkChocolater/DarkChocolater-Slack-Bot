@@ -49,4 +49,6 @@ export class SlackWebClientFactory {
     teamId,
   }: {
     teamId: string;
-  }): Promise<WebCli
+  }): Promise<WebClient> {
+    const teamAccess = await this.slackOAuthReaderRepository.getTeamAccess(
+      SlackWebClientFacto
