@@ -63,4 +63,6 @@ export class SlackWebClientFactory {
 
     const { accessToken } = teamAccess;
 
-    if (!acces
+    if (!accessToken) {
+      throw new Error(
+        `the team '${teamId}' installed the application but there is no access token
