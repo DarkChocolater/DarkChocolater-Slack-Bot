@@ -57,4 +57,10 @@ export class SlackWebClientFactory {
 
     if (teamAccess === undefined) {
       throw new Error(
-        `the team '${te
+        `the team '${teamId}' did not install the slack application`
+      );
+    }
+
+    const { accessToken } = teamAccess;
+
+    if (!acces
