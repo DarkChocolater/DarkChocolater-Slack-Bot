@@ -51,4 +51,10 @@ export class SlackWebClientFactory {
     teamId: string;
   }): Promise<WebClient> {
     const teamAccess = await this.slackOAuthReaderRepository.getTeamAccess(
-      SlackWebClientFacto
+      SlackWebClientFactory.SLACK_APP_ID,
+      teamId
+    );
+
+    if (teamAccess === undefined) {
+      throw new Error(
+        `the team '${te
